@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_vikings/playground/interactive_grid/interactive_grid.dart';
+import 'package:flutter_vikings/playground/interactive_grid/interactive_grid_3.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -9,10 +9,17 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
 
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: Colors.black,
-      body: InteractiveGrid(
-        horizontalAxisCount: 6,
+      body: SafeArea(
+        child: InteractiveGrid(
+          maxHAxisCount: 6,
+          minHAxisCount: 3,
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height -
+              MediaQuery.of(context).padding.bottom -
+              MediaQuery.of(context).padding.top,
+        ),
       ),
     );
   }

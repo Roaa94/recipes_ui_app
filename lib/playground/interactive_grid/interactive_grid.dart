@@ -1,12 +1,20 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 class InteractiveGrid extends StatefulWidget {
   const InteractiveGrid({
     Key? key,
-    required this.horizontalAxisCount,
+    required this.maxHAxisCount,
+    required this.minHAxisCount,
+    required this.height,
+    required this.width,
   }) : super(key: key);
 
-  final int horizontalAxisCount;
+  final double height;
+  final double width;
+  final int maxHAxisCount;
+  final int minHAxisCount;
 
   @override
   State<InteractiveGrid> createState() => _InteractiveGridState();
@@ -18,6 +26,11 @@ class _InteractiveGridState extends State<InteractiveGrid>
       TransformationController();
   Animation<Matrix4>? _snapAnimation;
   late final AnimationController _animationController;
+
+  late double gridChildWidth;
+  late double gridChildHeight;
+  late double gridWidth;
+  late double gridChildAspectRatio;
 
   void _onAnimateSnap() {
     _transformationController.value = _snapAnimation!.value;
@@ -34,27 +47,44 @@ class _InteractiveGridState extends State<InteractiveGrid>
     double scaleZ = previous.entry(2, 2);
     double xTranslation = previous.getTranslation().x;
     double yTranslation = previous.getTranslation().y;
+    double xDistance = xTranslation * scaleX;
+    double yDistance = yTranslation * scaleY;
+    bool snapToNextX =
+        xTranslation.abs() % gridChildWidth > gridChildWidth * 0.75;
+    bool snapToNextY =
+        yTranslation.abs() % gridChildHeight > gridChildHeight * 0.75;
+    int traveledXItems = snapToNextX
+        ? (xTranslation.abs() / gridChildWidth).ceil()
+        : (xTranslation.abs() / gridChildWidth).floor();
+    int traveledYItems = snapToNextY
+        ? (yTranslation.abs() / gridChildHeight).ceil()
+        : (yTranslation.abs() / gridChildHeight).floor();
+
+    log('translation: $xTranslation, $yTranslation');
+    log('current item traveled x distance: ${xDistance % gridChildWidth}');
+    log('current item traveled y distance: ${yTranslation.abs() % gridChildHeight}');
+    log('traveled items: $traveledXItems, $traveledYItems');
 
     Matrix4 updated = Matrix4.identity()
       ..setEntry(0, 0, scaleX)
       ..setEntry(1, 1, scaleY)
       ..setEntry(2, 2, scaleZ)
-      ..setTranslationRaw(-20, -20, 0);
-    print('Scales: $scaleX, $scaleY, $scaleZ');
-    print('updated $updated');
-    print('previous $previous');
+      ..setTranslationRaw(-traveledXItems * gridChildWidth * scaleX,
+          -traveledYItems * gridChildHeight * scaleY, 0);
+    log('Scales: $scaleX, $scaleY, $scaleZ');
     return updated;
   }
 
   void _initSnapAnimation() {
     _animationController.reset();
+    _updateTransformationMatrix(_transformationController.value);
     _snapAnimation = Matrix4Tween(
       begin: _transformationController.value,
       end: _updateTransformationMatrix(_transformationController.value),
     ).animate(
       CurvedAnimation(
         parent: _animationController,
-        curve: Curves.linear,
+        curve: Curves.easeInOut,
       ),
     );
     _snapAnimation!.addListener(_onAnimateSnap);
@@ -84,6 +114,11 @@ class _InteractiveGridState extends State<InteractiveGrid>
       vsync: this,
       duration: const Duration(milliseconds: 500),
     );
+
+    gridChildWidth = widget.width / widget.minHAxisCount;
+    gridChildHeight = widget.height / widget.minHAxisCount;
+    gridWidth = gridChildWidth * widget.maxHAxisCount;
+    gridChildAspectRatio = gridChildWidth / gridChildHeight;
   }
 
   @override
@@ -94,21 +129,13 @@ class _InteractiveGridState extends State<InteractiveGrid>
 
   @override
   Widget build(BuildContext context) {
-    Size screenSize = MediaQuery.of(context).size;
-    double gridWidth = screenSize.width * 2;
-    double gridChildAspectRatio = screenSize.width /
-        (screenSize.height - MediaQuery.of(context).padding.top);
-
     return InteractiveViewer(
       constrained: false,
       minScale: 1,
       maxScale: 3,
-      // boundaryMargin: EdgeInsets.only(
-      //   bottom: MediaQuery.of(context).padding.bottom,
-      // ),
       transformationController: _transformationController,
       onInteractionUpdate: (ScaleUpdateDetails details) {
-        // print(_transformationController.value.getTranslation().x);
+        // log(_transformationController.value.getTranslation().toString());
         // print(_transformationController.value.getMaxScaleOnAxis());
       },
       onInteractionEnd: (ScaleEndDetails details) {
@@ -121,18 +148,31 @@ class _InteractiveGridState extends State<InteractiveGrid>
         child: GridView.builder(
           physics: const NeverScrollableScrollPhysics(),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: widget.horizontalAxisCount,
+            crossAxisCount: widget.maxHAxisCount,
+            childAspectRatio: gridChildAspectRatio,
             mainAxisSpacing: 5,
             crossAxisSpacing: 5,
-            childAspectRatio: gridChildAspectRatio,
           ),
-          itemCount: 52,
+          itemCount: 30,
           clipBehavior: Clip.none,
           itemBuilder: (context, i) {
             return ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: Container(
-                color: Colors.blue.shade100,
+              child: GestureDetector(
+                onTap: () {
+                  print('tapped $i');
+                },
+                child: Container(
+                  color: Colors.blue.shade100,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('Item $i'),
+                      Text('Width: ${gridChildWidth.ceil()}'),
+                      Text('Height: ${gridChildHeight.ceil()}'),
+                    ],
+                  ),
+                ),
               ),
             );
           },
