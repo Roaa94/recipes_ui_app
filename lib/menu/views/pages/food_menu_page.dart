@@ -35,11 +35,7 @@ class _FoodMenuPageState extends State<FoodMenuPage> {
       ),
       body: NotificationListener<UserScrollNotification>(
         onNotification: (UserScrollNotification notification) {
-          if (notification.direction == ScrollDirection.forward) {
-            scrollDirectionNotifier.value = ScrollDirection.forward;
-          } else if (notification.direction == ScrollDirection.reverse) {
-            scrollDirectionNotifier.value = ScrollDirection.reverse;
-          }
+          scrollDirectionNotifier.value = notification.direction;
           return true;
         },
         child: ListView.separated(
