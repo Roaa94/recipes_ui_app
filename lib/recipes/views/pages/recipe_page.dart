@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vikings/recipes/models/recipe.dart';
 import 'package:flutter_vikings/recipes/views/widgets/recipe_page_sliver_app_bar.dart';
@@ -20,40 +21,53 @@ class _RecipePageState extends State<RecipePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CustomScrollView(
-        controller: scrollController,
-        slivers: [
-          FoodItemSliverAppBar(
-            scrollController: scrollController,
-            menuItem: widget.menuItem,
-          ),
-          SliverPadding(
-            padding: const EdgeInsets.symmetric(horizontal: 17, vertical: 20),
-            sliver: SliverList(
-              delegate: SliverChildListDelegate([
-                Hero(
-                  tag: '__recipe_${widget.menuItem.id}_title__',
-                  child: Text(
-                    widget.menuItem.title,
-                    style: Theme.of(context).textTheme.headline4!,
+      body: Row(
+        children: [
+          if (kIsWeb)
+            Expanded(
+              flex: 1,
+              child: Container(),
+            ),
+          Expanded(
+            flex: 2,
+            child: CustomScrollView(
+              controller: scrollController,
+              slivers: [
+                FoodItemSliverAppBar(
+                  scrollController: scrollController,
+                  menuItem: widget.menuItem,
+                ),
+                SliverPadding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 17, vertical: 20),
+                  sliver: SliverList(
+                    delegate: SliverChildListDelegate([
+                      Hero(
+                        tag: '__recipe_${widget.menuItem.id}_title__',
+                        child: Text(
+                          widget.menuItem.title,
+                          style: Theme.of(context).textTheme.headline4!,
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      Hero(
+                        tag: '__recipe_${widget.menuItem.id}_description__',
+                        child: Text(
+                          widget.menuItem.description,
+                          style: Theme.of(context).textTheme.bodyText2!,
+                        ),
+                      ),
+                    ]),
                   ),
                 ),
-                const SizedBox(height: 10),
-                Hero(
-                  tag: '__recipe_${widget.menuItem.id}_description__',
-                  child: Text(
-                    widget.menuItem.description,
-                    style: Theme.of(context).textTheme.bodyText2!,
+                const SliverToBoxAdapter(
+                  child: SizedBox(
+                    height: 1000,
                   ),
-                ),
-              ]),
+                )
+              ],
             ),
           ),
-          const SliverToBoxAdapter(
-            child: SizedBox(
-              height: 1000,
-            ),
-          )
         ],
       ),
     );
