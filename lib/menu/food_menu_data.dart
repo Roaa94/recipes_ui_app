@@ -109,7 +109,7 @@ class FoodMenuData {
       id: 5,
       title: 'Fruit Plate',
       description:
-          "Melons - they're firmer so make a great base for the softer berries and fruits. Tropical fruit - the top of a pineapple can be included for height, while dragonfruit looks vibrant. Check out speciality shops for interesting tropical fruit. Berries - plump, ripe, juicy berries are always a winner on a fruit platter",
+          "Melons - they're firmer so make a great base for the softer berries and fruits. Tropical fruit - the top of a pineapple can be included for height, while dragonfruit looks vibrant.",
       ingredients: [
         '',
       ],

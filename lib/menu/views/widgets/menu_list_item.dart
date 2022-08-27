@@ -51,7 +51,12 @@ class MenuListItem extends StatelessWidget {
                     borderRadius: BorderRadius.circular(35),
                     boxShadow: [
                       BoxShadow(
-                        color: AppColors.red.withOpacity(0.15),
+                        color: AppColors.orangeDark.withOpacity(
+                          AppColors.getBrightness(menuItem.bgColor) ==
+                                  Brightness.dark
+                              ? 0.5
+                              : 0.2,
+                        ),
                         blurRadius: 10,
                         offset: const Offset(0, 10),
                       ),

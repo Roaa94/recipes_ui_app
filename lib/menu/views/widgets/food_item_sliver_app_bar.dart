@@ -78,6 +78,18 @@ class _FoodItemSliverAppBarState extends State<FoodItemSliverAppBar> {
                   bottomRight: Radius.circular(35),
                   bottomLeft: Radius.circular(35),
                 ),
+                boxShadow: [
+                  BoxShadow(
+                    color: AppColors.orangeDark.withOpacity(
+                      AppColors.getBrightness(widget.menuItem.bgColor) ==
+                              Brightness.dark
+                          ? 0.5
+                          : 0.2,
+                    ),
+                    blurRadius: 10,
+                    offset: const Offset(0, 5),
+                  ),
+                ],
               ),
               alignment: Alignment.center,
             ),
