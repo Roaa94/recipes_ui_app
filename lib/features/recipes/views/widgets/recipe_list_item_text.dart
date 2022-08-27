@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vikings/core/enums/screen_size.dart';
 import 'package:flutter_vikings/core/styles/app_colors.dart';
-import 'package:flutter_vikings/recipes/models/recipe.dart';
-import 'package:flutter_vikings/recipes/views/widgets/recipe_list_item_text_wrapper.dart';
+import 'package:flutter_vikings/features/recipes/models/recipe.dart';
+import 'package:flutter_vikings/features/recipes/views/widgets/recipe_list_item_text_wrapper.dart';
 
 class RecipeListItemText extends StatelessWidget {
   const RecipeListItemText(

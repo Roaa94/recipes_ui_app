@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_vikings/recipes/recipes_data.dart';
-import 'package:flutter_vikings/recipes/recipes_layout.dart';
-import 'package:flutter_vikings/recipes/views/widgets/recipe_list_item.dart';
-import 'package:flutter_vikings/recipes/views/widgets/recipe_list_item_wrapper.dart';
+import 'package:flutter_vikings/features/recipes/recipes_data.dart';
+import 'package:flutter_vikings/features/recipes/recipes_layout.dart';
+import 'package:flutter_vikings/features/recipes/views/widgets/recipe_list_item.dart';
+import 'package:flutter_vikings/features/recipes/views/widgets/recipe_list_item_wrapper.dart';
 
 class RecipesPage extends StatefulWidget {
   const RecipesPage({Key? key}) : super(key: key);

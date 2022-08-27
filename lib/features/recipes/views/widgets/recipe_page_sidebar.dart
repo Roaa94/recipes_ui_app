@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vikings/core/widgets/app_bar_leading.dart';
-import 'package:flutter_vikings/recipes/models/recipe.dart';
-import 'package:flutter_vikings/recipes/views/widgets/recipe_page_image.dart';
-import 'package:flutter_vikings/recipes/views/widgets/recipe_page_image_bg.dart';
+import 'package:flutter_vikings/features/recipes/models/recipe.dart';
+import 'package:flutter_vikings/features/recipes/views/widgets/recipe_page_image.dart';
+import 'package:flutter_vikings/features/recipes/views/widgets/recipe_page_image_bg.dart';
 
 class RecipePageSidebar extends StatelessWidget {
   const RecipePageSidebar(

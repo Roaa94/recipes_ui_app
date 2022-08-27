@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_vikings/recipes/models/recipe.dart';
+import 'package:flutter_vikings/features/recipes/models/recipe.dart';
 
 class IngredientsSection extends StatelessWidget {
   const IngredientsSection(

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vikings/core/styles/app_colors.dart';
-import 'package:flutter_vikings/recipes/models/recipe.dart';
-import 'package:flutter_vikings/recipes/views/pages/recipe_page.dart';
-import 'package:flutter_vikings/recipes/views/widgets/recipe_list_item_image.dart';
-import 'package:flutter_vikings/recipes/views/widgets/recipe_list_item_text.dart';
+import 'package:flutter_vikings/features/recipes/models/recipe.dart';
+import 'package:flutter_vikings/features/recipes/views/pages/recipe_page.dart';
+import 'package:flutter_vikings/features/recipes/views/widgets/recipe_list_item_image.dart';
+import 'package:flutter_vikings/features/recipes/views/widgets/recipe_list_item_text.dart';
 
 class RecipeListItem extends StatefulWidget {
   const RecipeListItem(
