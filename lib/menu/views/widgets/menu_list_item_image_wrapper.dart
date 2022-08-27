@@ -1,0 +1,80 @@
+import 'dart:math' as math;
+
+import 'package:flutter/material.dart';
+
+class MenuListItemImageWrapper extends StatefulWidget {
+  const MenuListItemImageWrapper({
+    Key? key,
+    required this.child,
+    this.playOnce = false,
+  }) : super(key: key);
+
+  final Widget child;
+  final bool playOnce;
+
+  @override
+  State<MenuListItemImageWrapper> createState() =>
+      _MenuListItemImageWrapperState();
+}
+
+class _MenuListItemImageWrapperState extends State<MenuListItemImageWrapper>
+    with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
+  late final AnimationController animationController;
+  late final Animation<double> scaleAnimation;
+  late final Animation<double> rotationAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 700),
+    )..forward();
+
+    scaleAnimation = Tween<double>(begin: 0.6, end: 1).animate(
+      CurvedAnimation(
+        parent: animationController,
+        curve: const Interval(0.3, 1, curve: Curves.easeOutBack),
+      ),
+    );
+
+    rotationAnimation = Tween<double>(
+      begin: 20 * math.pi / 180,
+      end: 0,
+    ).animate(
+      CurvedAnimation(
+        parent: animationController,
+        curve: const Interval(0.3, 1, curve: Curves.easeOutBack),
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    super.build(context);
+    return AnimatedBuilder(
+      animation: animationController,
+      child: widget.child,
+      builder: (context, child) {
+        return Transform.scale(
+          scale: scaleAnimation.value,
+          alignment: Alignment.bottomRight,
+          child: Transform.rotate(
+            angle: rotationAnimation.value,
+            alignment: Alignment.bottomRight,
+            child: child,
+          ),
+        );
+      },
+    );
+  }
+
+  @override
+  bool get wantKeepAlive => widget.playOnce;
+}
