@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_vikings/menu/food_menu_data.dart';
+import 'package:flutter_vikings/menu/food_menu_layout.dart';
 import 'package:flutter_vikings/menu/views/widgets/menu_list_item.dart';
 import 'package:flutter_vikings/menu/views/widgets/menu_list_item_wrapper.dart';
 
@@ -35,19 +36,27 @@ class _FoodMenuPageState extends State<FoodMenuPage> {
       ),
       body: NotificationListener<UserScrollNotification>(
         onNotification: (UserScrollNotification notification) {
-          scrollDirectionNotifier.value = notification.direction;
+          if (notification.direction == ScrollDirection.forward ||
+              notification.direction == ScrollDirection.reverse) {
+            scrollDirectionNotifier.value = notification.direction;
+          }
           return true;
         },
-        child: ListView.separated(
+        child: GridView.builder(
           padding: EdgeInsets.only(
             left: 17,
             right: 17,
             top: 10,
             bottom: MediaQuery.of(context).padding.bottom + 20,
           ),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: FoodMenuLayout.of(context).gridCrossAxisCount,
+            childAspectRatio: FoodMenuLayout.of(context).gridChildAspectRatio,
+            mainAxisSpacing: 25,
+            crossAxisSpacing: 25,
+          ),
           itemCount: FoodMenuData.dessertMenu.length,
           cacheExtent: 0,
-          separatorBuilder: (context, i) => const SizedBox(height: 25),
           itemBuilder: (context, i) {
             return ValueListenableBuilder(
               valueListenable: scrollDirectionNotifier,
