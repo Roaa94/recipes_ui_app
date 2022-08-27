@@ -59,7 +59,8 @@ class _RecipeListItemGestureDetectorState
       child: GestureDetector(
         onTap: widget.onTap,
         onTapDown: (_) => animationController.forward(),
-        onTapCancel: () => animationController.reset(),
+        onTapCancel: () =>
+            animationController.reverse(from: animationController.value),
         onTapUp: (_) => animationController.reverse(),
         child: AnimatedBuilder(
           animation: animationController,
