@@ -6,7 +6,7 @@ class FoodItemSliverAppBar extends StatefulWidget {
     Key? key,
     this.scrollController,
     required this.menuItem,
-    this.expandedHeight = 300,
+    this.expandedHeight = 340,
     this.collapsedHeight = 200,
   }) : super(key: key);
 
@@ -58,19 +58,37 @@ class _FoodItemSliverAppBarState extends State<FoodItemSliverAppBar> {
       expandedHeight: widget.expandedHeight == null
           ? null
           : widget.expandedHeight! + MediaQuery.of(context).padding.top,
-
-      flexibleSpace: Container(
-        decoration: BoxDecoration(
-          color: widget.menuItem.bgColor,
-        ),
-        alignment: Alignment.center,
-        child: Hero(
-          tag: '__food_item_${widget.menuItem.id}_image__',
-          child: Image.asset(
-            widget.menuItem.image,
-            width: MediaQuery.of(context).size.width * 0.6,
+      flexibleSpace: Stack(
+        children: [
+          Hero(
+            tag: '__food_item_${widget.menuItem.id}_image_bg__',
+            child: Container(
+              decoration: BoxDecoration(
+                color: widget.menuItem.bgColor,
+                borderRadius: BorderRadius.only(
+                  bottomRight: Radius.circular(35),
+                  bottomLeft: Radius.circular(35),
+                ),
+              ),
+              alignment: Alignment.center,
+            ),
           ),
-        ),
+          SafeArea(
+            bottom: false,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: Center(
+                child: Hero(
+                  tag: '__food_item_${widget.menuItem.id}_image__',
+                  child: Image.asset(
+                    widget.menuItem.image,
+                    width: MediaQuery.of(context).size.width * 0.75,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
