@@ -28,11 +28,9 @@ class MenuListItem extends StatelessWidget {
                 Animation<double> animation,
                 Animation<double> secondaryAnimation,
                 Widget child) {
-              return Align(
-                child: FadeTransition(
-                  opacity: animation,
-                  child: child,
-                ),
+              return FadeTransition(
+                opacity: animation,
+                child: child,
               );
             },
           ),
