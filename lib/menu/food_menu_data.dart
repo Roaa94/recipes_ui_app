@@ -1,9 +1,10 @@
 import 'package:flutter_vikings/core/styles/app_colors.dart';
-import 'package:flutter_vikings/menu/models/menu_item.dart';
+import 'package:flutter_vikings/menu/models/food_menu_item.dart';
 
 class FoodMenuData {
   static const List<FoodMenuItem> dessertMenu = [
     FoodMenuItem(
+      id: 1,
       title: 'Lemon Cheesecake',
       description:
           'Tart Lemon Cheesecake sits atop an almond-graham cracker crust to add a delightful nuttiness to the traditional graham cracker crust. Finish the cheesecake with lemon curd for double the tart pucker!',
@@ -27,6 +28,7 @@ class FoodMenuData {
       textColor: AppColors.text,
     ),
     FoodMenuItem(
+      id: 2,
       title: 'Macaroons',
       description:
           'Soft and chewy on the inside, crisp and golden on the outside — these are the perfect macaroons.',
@@ -63,6 +65,7 @@ class FoodMenuData {
       textColor: AppColors.text,
     ),
     FoodMenuItem(
+      id: 3,
       title: 'Cream Cupcakes',
       description:
           "Bake these easy vanilla cupcakes in just 35 minutes. Perfect for birthdays, picnics or whenever you fancy a sweet treat, they're sure to be a crowd-pleaser",
@@ -78,6 +81,7 @@ class FoodMenuData {
       textColor: AppColors.text,
     ),
     FoodMenuItem(
+      id: 4,
       title: 'Chocolate Cheesecake',
       description:
           "Treat family and friends to this decadent chocolate dessert. It's an indulgent end to a dinner party or weekend family meal",
@@ -102,6 +106,7 @@ class FoodMenuData {
       textColor: AppColors.white,
     ),
     FoodMenuItem(
+      id: 5,
       title: 'Fruit Plate',
       description:
           "Melons - they're firmer so make a great base for the softer berries and fruits. Tropical fruit - the top of a pineapple can be included for height, while dragonfruit looks vibrant. Check out speciality shops for interesting tropical fruit. Berries - plump, ripe, juicy berries are always a winner on a fruit platter",
@@ -117,6 +122,7 @@ class FoodMenuData {
       textColor: AppColors.text,
     ),
     FoodMenuItem(
+      id: 6,
       title: 'Chocolate Donuts',
       description:
           'Moist and fluffy donuts that are baked, not fried, and full of chocolate. Covered in a thick chocolate glaze, these are perfect for any chocoholic who wants a chocolate version of this classic treat.',
@@ -148,9 +154,10 @@ class FoodMenuData {
       textColor: AppColors.text,
     ),
     FoodMenuItem(
+      id: 7,
       title: 'Strawberry Cake',
       description:
-      'Jam-packed with fresh strawberries, this strawberry cake is one of the simplest, most delicious cakes you’ll ever make.',
+          'Jam-packed with fresh strawberries, this strawberry cake is one of the simplest, most delicious cakes you’ll ever make.',
       ingredients: [
         '',
       ],
@@ -163,6 +170,7 @@ class FoodMenuData {
       textColor: AppColors.white,
     ),
     FoodMenuItem(
+      id: 8,
       title: 'Fluffy Cake',
       description:
           "This is a very good everyday cake leavened with baking powder. It's relatively light—it isn't loaded with butter, and it calls for only 2 eggs and 2 percent milk. Mine was perfectly baked after 30 minutes. After 10 minutes on the cooling rack, the cake released from the pans easily.",
@@ -194,6 +202,7 @@ class FoodMenuData {
       textColor: AppColors.white,
     ),
     FoodMenuItem(
+      id: 9,
       title: 'White Cream Cake',
       description:
           'This White Chocolate Cake is both decadent and delicious! White chocolate is incorporated into the cake layers, the frosting, and the drip for a stunning monochrome effect.',
@@ -229,9 +238,10 @@ class FoodMenuData {
       textColor: AppColors.text,
     ),
     FoodMenuItem(
+      id: 10,
       title: 'Fruit Pie',
       description:
-      'Bake a hearty fruit pie for dessert. Our collection of year-round pastry classics includes apple & blackberry, summer berries, lemon meringue and mince pies.',
+          'Bake a hearty fruit pie for dessert. Our collection of year-round pastry classics includes apple & blackberry, summer berries, lemon meringue and mince pies.',
       ingredients: [
         '',
       ],
@@ -244,6 +254,7 @@ class FoodMenuData {
       textColor: AppColors.text,
     ),
     FoodMenuItem(
+      id: 11,
       title: 'Honey Cake',
       description:
           "The secret to this cake's fantastic flavor is the tiny amount of bitterness from burnt honey. The slightly tangy whipped cream frosting provides a bit of acidity and lovely light texture, and unlike other frostings, it's not too sweet",
@@ -280,6 +291,7 @@ class FoodMenuData {
       textColor: AppColors.text,
     ),
     FoodMenuItem(
+      id: 12,
       title: 'Powdered Cake',
       description:
           'Heavy on the butter and nutmeg, this cake has all the flavors of your favorite cake donut in a convenient square shape.',
@@ -295,6 +307,23 @@ class FoodMenuData {
       textColor: AppColors.text,
     ),
     FoodMenuItem(
+      id: 13,
+      title: 'Strawberries',
+      description:
+          "We'll admit it: we go a little crazy during strawberry season. Though easy to grow, these sweet berries just taste better when you get them in season, as opposed to buying them at other times of the year.",
+      ingredients: [
+        '',
+      ],
+      instructions: [
+        '',
+      ],
+      image: 'assets/images/desserts/10-strawberries.png',
+      bgImage: 'assets/images/desserts/10-strawberries-bg.png',
+      bgColor: AppColors.red,
+      textColor: AppColors.white,
+    ),
+    FoodMenuItem(
+      id: 14,
       title: 'Chocolate Cake',
       description:
           'The Best Chocolate Cake Recipe – A one bowl chocolate cake recipe that is quick, easy, and delicious! Updated with gluten-free, dairy-free, and egg-free options!',
@@ -310,6 +339,7 @@ class FoodMenuData {
       textColor: AppColors.white,
     ),
     FoodMenuItem(
+      id: 15,
       title: 'Apple Pie',
       description:
           "This was my grandmother's apple pie recipe. I have never seen another one quite like it. It will always be my favorite and has won me several first place prizes in local competitions.",

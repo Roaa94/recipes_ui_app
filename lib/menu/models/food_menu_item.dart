@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vikings/core/styles/app_colors.dart';
 
 class FoodMenuItem {
+  final int id;
   final String title;
   final String description;
   final List<String> ingredients;
@@ -12,6 +13,7 @@ class FoodMenuItem {
   final Color textColor;
 
   const FoodMenuItem({
+    required this.id,
     required this.title,
     required this.description,
     required this.ingredients,

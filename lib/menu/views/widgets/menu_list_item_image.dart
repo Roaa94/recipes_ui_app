@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_vikings/menu/models/food_menu_item.dart';
 
 class MenuListItemImage extends StatefulWidget {
-  const MenuListItemImage({Key? key}) : super(key: key);
+  const MenuListItemImage(
+    this.menuItem, {
+    Key? key,
+  }) : super(key: key);
+
+  final FoodMenuItem menuItem;
 
   @override
   State<MenuListItemImage> createState() => _MenuListItemImageState();
@@ -28,6 +34,20 @@ class _MenuListItemImageState extends State<MenuListItemImage>
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(35),
+      child: Stack(
+        children: [
+          Positioned(
+            bottom: -20,
+            right: -20,
+            child: Image.asset(
+              widget.menuItem.image,
+              width: MediaQuery.of(context).size.width * 0.45,
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
