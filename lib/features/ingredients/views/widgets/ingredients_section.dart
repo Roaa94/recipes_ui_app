@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_vikings/features/ingredients/views/widgets/ingredient_item.dart';
+import 'package:flutter_vikings/features/ingredients/views/widgets/ingredient_item_wrapper.dart';
 import 'package:flutter_vikings/features/recipes/models/recipe.dart';
 
 class IngredientsSection extends StatelessWidget {
@@ -17,13 +19,13 @@ class IngredientsSection extends StatelessWidget {
       itemCount: recipe.ingredients.length,
       shrinkWrap: true,
       itemBuilder: (context, i) {
-        return Container(
-          margin: const EdgeInsets.only(bottom: 10),
-          padding: const EdgeInsets.all(10),
-          decoration: BoxDecoration(
-            color: recipe.bgColor,
+        return IngredientItemWrapper(
+          index: i,
+          totalCount: recipe.ingredients.length,
+          child: IngredientItem(
+            recipe,
+            ingredient: recipe.ingredients[i],
           ),
-          child: Text(recipe.ingredients[i]),
         );
       },
     );

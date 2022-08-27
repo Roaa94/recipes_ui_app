@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_vikings/core/enums/screen_size.dart';
 import 'package:flutter_vikings/core/widgets/delayed_fade_in_effect.dart';
-import 'package:flutter_vikings/features/recipes/models/recipe.dart';
 import 'package:flutter_vikings/features/ingredients/views/widgets/ingredients_section.dart';
+import 'package:flutter_vikings/features/recipes/models/recipe.dart';
 import 'package:flutter_vikings/features/recipes/views/widgets/recipe_page_sidebar.dart';
 import 'package:flutter_vikings/features/recipes/views/widgets/recipe_page_sliver_app_bar.dart';
 
@@ -121,9 +121,9 @@ class _RecipePageState extends State<RecipePage> {
                     ]),
                   ),
                 ),
-                const SliverToBoxAdapter(
+                SliverToBoxAdapter(
                   child: SizedBox(
-                    height: 1000,
+                    height: MediaQuery.of(context).padding.bottom + 20,
                   ),
                 )
               ],
