@@ -1,9 +1,9 @@
 import 'package:flutter_vikings/core/styles/app_colors.dart';
 import 'package:flutter_vikings/menu/models/menu_item.dart';
 
-class MenuData {
-  List<MenuItem> dessertMenu = [
-    MenuItem(
+class FoodMenuData {
+  static const List<FoodMenuItem> dessertMenu = [
+    FoodMenuItem(
       title: 'Lemon Cheesecake',
       description:
           'Tart Lemon Cheesecake sits atop an almond-graham cracker crust to add a delightful nuttiness to the traditional graham cracker crust. Finish the cheesecake with lemon curd for double the tart pucker!',
@@ -26,7 +26,7 @@ class MenuData {
       bgColor: AppColors.primary,
       textColor: AppColors.text,
     ),
-    MenuItem(
+    FoodMenuItem(
       title: 'Chocolate Cheesecake',
       description:
           "Treat family and friends to this decadent chocolate dessert. It's an indulgent end to a dinner party or weekend family meal",
@@ -50,7 +50,7 @@ class MenuData {
       bgColor: AppColors.primary,
       textColor: AppColors.text,
     ),
-    MenuItem(
+    FoodMenuItem(
       title: 'Chocolate Donuts',
       description:
           'Moist and fluffy donuts that are baked, not fried, and full of chocolate. Covered in a thick chocolate glaze, these are perfect for any chocoholic who wants a chocolate version of this classic treat.',
@@ -81,7 +81,7 @@ class MenuData {
       bgColor: AppColors.primary,
       textColor: AppColors.text,
     ),
-    MenuItem(
+    FoodMenuItem(
       title: 'Fluffy Cake',
       description:
           "This is a very good everyday cake leavened with baking powder. It's relatively light—it isn't loaded with butter, and it calls for only 2 eggs and 2 percent milk. Mine was perfectly baked after 30 minutes. After 10 minutes on the cooling rack, the cake released from the pans easily.",
@@ -112,7 +112,7 @@ class MenuData {
       bgColor: AppColors.primary,
       textColor: AppColors.text,
     ),
-    MenuItem(
+    FoodMenuItem(
       title: 'Macaroons',
       description:
           'Soft and chewy on the inside, crisp and golden on the outside — these are the perfect macaroons.',
@@ -148,7 +148,7 @@ class MenuData {
       bgColor: AppColors.primary,
       textColor: AppColors.text,
     ),
-    MenuItem(
+    FoodMenuItem(
       title: 'White Cream Cake',
       description:
           'This White Chocolate Cake is both decadent and delicious! White chocolate is incorporated into the cake layers, the frosting, and the drip for a stunning monochrome effect.',
@@ -183,7 +183,7 @@ class MenuData {
       bgColor: AppColors.primary,
       textColor: AppColors.text,
     ),
-    MenuItem(
+    FoodMenuItem(
       title: 'Honey Cake',
       description:
           "The secret to this cake's fantastic flavor is the tiny amount of bitterness from burnt honey. The slightly tangy whipped cream frosting provides a bit of acidity and lovely light texture, and unlike other frostings, it's not too sweet",
@@ -219,7 +219,7 @@ class MenuData {
       bgColor: AppColors.primary,
       textColor: AppColors.text,
     ),
-    MenuItem(
+    FoodMenuItem(
       title: 'Cream Cupcakes',
       description: '',
       ingredients: [
@@ -233,7 +233,7 @@ class MenuData {
       bgColor: AppColors.primary,
       textColor: AppColors.text,
     ),
-    MenuItem(
+    FoodMenuItem(
       title: 'Fruit Plate',
       description:
           "Melons - they're firmer so make a great base for the softer berries and fruits. Tropical fruit - the top of a pineapple can be included for height, while dragonfruit looks vibrant. Check out speciality shops for interesting tropical fruit. Berries - plump, ripe, juicy berries are always a winner on a fruit platter",
@@ -248,7 +248,7 @@ class MenuData {
       bgColor: AppColors.primary,
       textColor: AppColors.text,
     ),
-    MenuItem(
+    FoodMenuItem(
       title: 'Powdered Cake',
       description:
           'Heavy on the butter and nutmeg, this cake has all the flavors of your favorite cake donut in a convenient square shape.',
@@ -263,7 +263,7 @@ class MenuData {
       bgColor: AppColors.primary,
       textColor: AppColors.text,
     ),
-    MenuItem(
+    FoodMenuItem(
       title: 'Chocolate Cake',
       description:
           'The Best Chocolate Cake Recipe – A one bowl chocolate cake recipe that is quick, easy, and delicious! Updated with gluten-free, dairy-free, and egg-free options!',
@@ -278,7 +278,7 @@ class MenuData {
       bgColor: AppColors.primary,
       textColor: AppColors.text,
     ),
-    MenuItem(
+    FoodMenuItem(
       title: 'Strawberry Powdered Cake',
       description:
           'Jam-packed with fresh strawberries, this strawberry cake is one of the simplest, most delicious cakes you’ll ever make.',
@@ -293,7 +293,7 @@ class MenuData {
       bgColor: AppColors.primary,
       textColor: AppColors.text,
     ),
-    MenuItem(
+    FoodMenuItem(
       title: 'Fruit Pie',
       description:
           'Bake a hearty fruit pie for dessert. Our collection of year-round pastry classics includes apple & blackberry, summer berries, lemon meringue and mince pies.',
@@ -308,7 +308,7 @@ class MenuData {
       bgColor: AppColors.primary,
       textColor: AppColors.text,
     ),
-    MenuItem(
+    FoodMenuItem(
       title: 'Apple Pie',
       description:
           "This was my grandmother's apple pie recipe. I have never seen another one quite like it. It will always be my favorite and has won me several first place prizes in local competitions.",
