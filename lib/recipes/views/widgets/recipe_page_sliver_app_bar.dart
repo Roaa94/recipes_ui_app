@@ -31,6 +31,7 @@ class RecipePageSliderAppBar extends StatelessWidget {
         statusBarBrightness: AppColors.getBrightness(recipe.bgColor),
       ),
       leading: AppBarLeading(
+        popValue: imageRotationAngle,
         bgColor: AppColors.textColorFromBackground(recipe.bgColor),
       ),
       expandedHeight: expandedHeight == null

@@ -7,9 +7,11 @@ class RecipeListItemImage extends StatelessWidget {
   const RecipeListItemImage(
     this.menuItem, {
     Key? key,
+    this.imageRotationAngle = 0,
   }) : super(key: key);
 
   final Recipe menuItem;
+  final double imageRotationAngle;
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +20,12 @@ class RecipeListItemImage extends StatelessWidget {
     return RecipeListItemImageWrapper(
       child: Hero(
         tag: '__recipe_${menuItem.id}_image__',
-        child: Image.asset(
-          menuItem.image,
-          width: imageSize,
+        child: Transform.rotate(
+          angle: imageRotationAngle,
+          child: Image.asset(
+            menuItem.image,
+            width: imageSize,
+          ),
         ),
       ),
     );

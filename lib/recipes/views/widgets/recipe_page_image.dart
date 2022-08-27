@@ -18,10 +18,10 @@ class RecipePageImage extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 20),
         child: Center(
-          child: Transform.rotate(
-            angle: imageRotationAngle,
-            child: Hero(
-              tag: '__recipe_${recipe.id}_image__',
+          child: Hero(
+            tag: '__recipe_${recipe.id}_image__',
+            child: Transform.rotate(
+              angle: imageRotationAngle,
               child: Image.asset(
                 recipe.image,
                 width: MediaQuery.of(context).size.width * 0.75,

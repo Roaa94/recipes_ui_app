@@ -7,10 +7,12 @@ class AppBarLeading extends StatefulWidget {
     Key? key,
     this.bgColor = AppColors.white,
     this.text,
+    this.popValue,
   }) : super(key: key);
 
   final Color bgColor;
   final String? text;
+  final dynamic popValue;
 
   @override
   State<AppBarLeading> createState() => _AppBarLeadingState();
@@ -46,7 +48,7 @@ class _AppBarLeadingState extends State<AppBarLeading>
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => Navigator.of(context).pop(),
+      onTap: () => Navigator.of(context).pop(widget.popValue),
       child: ScaleTransition(
         scale: scaleAnimation,
         child: Container(

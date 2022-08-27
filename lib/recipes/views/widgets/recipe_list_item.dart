@@ -5,7 +5,7 @@ import 'package:flutter_vikings/recipes/views/pages/recipe_page.dart';
 import 'package:flutter_vikings/recipes/views/widgets/recipe_list_item_image.dart';
 import 'package:flutter_vikings/recipes/views/widgets/recipe_list_item_text.dart';
 
-class RecipeListItem extends StatelessWidget {
+class RecipeListItem extends StatefulWidget {
   const RecipeListItem(
     this.menuItem, {
     Key? key,
@@ -14,15 +14,23 @@ class RecipeListItem extends StatelessWidget {
   final Recipe menuItem;
 
   @override
+  State<RecipeListItem> createState() => _RecipeListItemState();
+}
+
+class _RecipeListItemState extends State<RecipeListItem> {
+  double recipeImageRotationAngle = 0;
+
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.of(context).push(
+        Navigator.of(context)
+            .push(
           PageRouteBuilder(
             transitionDuration: const Duration(milliseconds: 300),
             pageBuilder: (BuildContext context, Animation<double> animation,
                 Animation<double> secondaryAnimation) {
-              return RecipePage(menuItem);
+              return RecipePage(widget.menuItem);
             },
             transitionsBuilder: (BuildContext context,
                 Animation<double> animation,
@@ -34,7 +42,14 @@ class RecipeListItem extends StatelessWidget {
               );
             },
           ),
-        );
+        )
+            .then((response) {
+          if (response != null && response is double) {
+            setState(() {
+              recipeImageRotationAngle = response;
+            });
+          }
+        });
       },
       child: SizedBox(
         width: double.infinity,
@@ -43,16 +58,16 @@ class RecipeListItem extends StatelessWidget {
           children: [
             Positioned.fill(
               child: Hero(
-                tag: '__recipe_${menuItem.id}_image_bg__',
+                tag: '__recipe_${widget.menuItem.id}_image_bg__',
                 child: Container(
                   alignment: Alignment.bottomRight,
                   decoration: BoxDecoration(
-                    color: menuItem.bgColor,
+                    color: widget.menuItem.bgColor,
                     borderRadius: BorderRadius.circular(35),
                     boxShadow: [
                       BoxShadow(
                         color: AppColors.orangeDark.withOpacity(
-                          AppColors.getBrightness(menuItem.bgColor) ==
+                          AppColors.getBrightness(widget.menuItem.bgColor) ==
                                   Brightness.dark
                               ? 0.5
                               : 0.2,
@@ -69,14 +84,17 @@ class RecipeListItem extends StatelessWidget {
             Positioned.fill(
               child: Container(
                 alignment: Alignment.bottomRight,
-                child: RecipeListItemImage(menuItem),
+                child: RecipeListItemImage(
+                  widget.menuItem,
+                  imageRotationAngle: recipeImageRotationAngle,
+                ),
               ),
             ),
             Row(
               children: [
                 Expanded(
                   flex: 3,
-                  child: RecipeListItemText(menuItem),
+                  child: RecipeListItemText(widget.menuItem),
                 ),
                 Expanded(flex: 2, child: Container()),
               ],
