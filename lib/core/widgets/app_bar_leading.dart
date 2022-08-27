@@ -52,10 +52,15 @@ class _AppBarLeadingState extends State<AppBarLeading>
         child: Container(
           margin: const EdgeInsets.only(left: 17),
           padding: EdgeInsets.all(widget.text != null ? 10 : 0),
-          decoration: BoxDecoration(
-            color: widget.bgColor,
-            borderRadius: BorderRadius.circular(widget.text != null ? 20 : 100),
-          ),
+          decoration: widget.text == null
+              ? BoxDecoration(
+                  color: widget.bgColor,
+                  shape: BoxShape.circle,
+                )
+              : BoxDecoration(
+                  color: widget.bgColor,
+                  borderRadius: BorderRadius.circular(20),
+                ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
