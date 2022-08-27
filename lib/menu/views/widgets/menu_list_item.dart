@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_vikings/core/enums/screen_size.dart';
 import 'package:flutter_vikings/core/styles/app_colors.dart';
 import 'package:flutter_vikings/menu/models/food_menu_item.dart';
 import 'package:flutter_vikings/menu/views/pages/food_menu_item_page.dart';
 import 'package:flutter_vikings/menu/views/widgets/menu_list_item_image.dart';
+import 'package:flutter_vikings/menu/views/widgets/menu_list_item_text.dart';
 
 class MenuListItem extends StatelessWidget {
   const MenuListItem(
@@ -71,41 +71,7 @@ class MenuListItem extends StatelessWidget {
               children: [
                 Expanded(
                   flex: 3,
-                  child: Padding(
-                    padding: EdgeInsets.only(
-                      left: 20,
-                      right: 20,
-                      top: ScreenSize.of(context).isLarge ? 40 : 20,
-                      bottom: 20,
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: ScreenSize.of(context).isLarge
-                          ? MainAxisAlignment.start
-                          : MainAxisAlignment.end,
-                      children: [
-                        Text(
-                          menuItem.title,
-                          style:
-                              Theme.of(context).textTheme.headline4!.copyWith(
-                                    color: menuItem.textColor,
-                                  ),
-                        ),
-                        const SizedBox(height: 10),
-                        Flexible(
-                          child: Text(
-                            menuItem.description,
-                            style:
-                                Theme.of(context).textTheme.subtitle1!.copyWith(
-                                      color: menuItem.textColor,
-                                    ),
-                            maxLines: 3,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  child: MenuListItemText(menuItem),
                 ),
                 Expanded(flex: 2, child: Container()),
               ],
