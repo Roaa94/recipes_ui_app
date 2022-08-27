@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vikings/core/enums/screen_size.dart';
 import 'package:flutter_vikings/core/styles/app_colors.dart';
-import 'package:flutter_vikings/menu/models/food_menu_item.dart';
-import 'package:flutter_vikings/menu/views/widgets/menu_list_item_text_wrapper.dart';
+import 'package:flutter_vikings/recipes/models/recipe.dart';
+import 'package:flutter_vikings/recipes/views/widgets/recipe_list_item_text_wrapper.dart';
 
-class MenuListItemText extends StatelessWidget {
-  const MenuListItemText(
+class RecipeListItemText extends StatelessWidget {
+  const RecipeListItemText(
     this.menuItem, {
     Key? key,
   }) : super(key: key);
 
-  final FoodMenuItem menuItem;
+  final Recipe menuItem;
 
   @override
   Widget build(BuildContext context) {
-    return MenuListItemTextWrapper(
+    return RecipeListItemTextWrapper(
       child: Padding(
         padding: EdgeInsets.only(
           left: 20,
@@ -29,7 +29,7 @@ class MenuListItemText extends StatelessWidget {
               : MainAxisAlignment.end,
           children: [
             Hero(
-              tag: '__food_item_${menuItem.id}_title__',
+              tag: '__recipe_${menuItem.id}_title__',
               child: Text(
                 menuItem.title,
                 style: Theme.of(context).textTheme.headline4!.copyWith(
@@ -41,7 +41,7 @@ class MenuListItemText extends StatelessWidget {
             const SizedBox(height: 10),
             Flexible(
               child: Hero(
-                tag: '__food_item_${menuItem.id}_description__',
+                tag: '__recipe_${menuItem.id}_description__',
                 child: Text(
                   menuItem.description,
                   style: Theme.of(context).textTheme.subtitle1!.copyWith(

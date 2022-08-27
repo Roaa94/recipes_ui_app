@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_vikings/core/styles/app_themes.dart';
-import 'package:flutter_vikings/menu/food_menu_data.dart';
-import 'package:flutter_vikings/menu/models/food_menu_item.dart';
-import 'package:flutter_vikings/menu/views/pages/food_menu_page.dart';
+import 'package:flutter_vikings/recipes/recipes_data.dart';
+import 'package:flutter_vikings/recipes/models/recipe.dart';
+import 'package:flutter_vikings/recipes/views/pages/recipes_page.dart';
 
 void main() {
   runApp(
@@ -27,7 +27,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void didChangeDependencies() {
     if (_isInit) {
-      for (FoodMenuItem menuItem in FoodMenuData.dessertMenu) {
+      for (Recipe menuItem in RecipesData.dessertMenu) {
         precacheImage(Image.asset(menuItem.image).image, context);
       }
     }
@@ -43,7 +43,7 @@ class _MyAppState extends State<MyApp> {
       title: 'Flutter Vikings Demo',
       debugShowCheckedModeBanner: false,
       theme: AppThemes.main(),
-      home: const FoodMenuPage(),
+      home: const RecipesPage(),
     );
   }
 }

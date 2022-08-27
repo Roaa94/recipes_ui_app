@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-class MenuListItemWrapper extends StatefulWidget {
-  const MenuListItemWrapper({
+class RecipeListItemWrapper extends StatefulWidget {
+  const RecipeListItemWrapper({
     Key? key,
     required this.child,
     this.playOnce = false,
@@ -14,10 +14,10 @@ class MenuListItemWrapper extends StatefulWidget {
   final ScrollDirection scrollDirection;
 
   @override
-  State<MenuListItemWrapper> createState() => _MenuListItemWrapperState();
+  State<RecipeListItemWrapper> createState() => _RecipeListItemWrapperState();
 }
 
-class _MenuListItemWrapperState extends State<MenuListItemWrapper>
+class _RecipeListItemWrapperState extends State<RecipeListItemWrapper>
     with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
   late final AnimationController animationController;
   late final Animation<double> scaleAnimation;

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_vikings/core/styles/app_colors.dart';
 import 'package:flutter_vikings/core/widgets/app_bar_leading.dart';
-import 'package:flutter_vikings/menu/models/food_menu_item.dart';
+import 'package:flutter_vikings/recipes/models/recipe.dart';
 
 class FoodItemSliverAppBar extends StatefulWidget {
   const FoodItemSliverAppBar({
@@ -14,7 +14,7 @@ class FoodItemSliverAppBar extends StatefulWidget {
   }) : super(key: key);
 
   final ScrollController? scrollController;
-  final FoodMenuItem menuItem;
+  final Recipe menuItem;
   final double? expandedHeight;
   final double? collapsedHeight;
 
@@ -70,7 +70,7 @@ class _FoodItemSliverAppBarState extends State<FoodItemSliverAppBar> {
       flexibleSpace: Stack(
         children: [
           Hero(
-            tag: '__food_item_${widget.menuItem.id}_image_bg__',
+            tag: '__recipe_${widget.menuItem.id}_image_bg__',
             child: Container(
               decoration: BoxDecoration(
                 color: widget.menuItem.bgColor,
@@ -100,7 +100,7 @@ class _FoodItemSliverAppBarState extends State<FoodItemSliverAppBar> {
               padding: const EdgeInsets.symmetric(vertical: 20),
               child: Center(
                 child: Hero(
-                  tag: '__food_item_${widget.menuItem.id}_image__',
+                  tag: '__recipe_${widget.menuItem.id}_image__',
                   child: Image.asset(
                     widget.menuItem.image,
                     width: MediaQuery.of(context).size.width * 0.75,

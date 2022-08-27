@@ -1,9 +1,9 @@
 import 'package:flutter_vikings/core/styles/app_colors.dart';
-import 'package:flutter_vikings/menu/models/food_menu_item.dart';
+import 'package:flutter_vikings/recipes/models/recipe.dart';
 
-class FoodMenuData {
-  static const List<FoodMenuItem> dessertMenu = [
-    FoodMenuItem(
+class RecipesData {
+  static const List<Recipe> dessertMenu = [
+    Recipe(
       id: 1,
       title: 'Lemon Cheesecake',
       description:
@@ -26,7 +26,7 @@ class FoodMenuData {
       bgImage: 'assets/images/desserts/01-lemon-cheesecake-bg.png',
       bgColor: AppColors.yellow,
     ),
-    FoodMenuItem(
+    Recipe(
       id: 2,
       title: 'Macaroons',
       description:
@@ -62,7 +62,7 @@ class FoodMenuData {
       bgImage: 'assets/images/desserts/05-macaroons-bg.png',
       bgColor: AppColors.primary,
     ),
-    FoodMenuItem(
+    Recipe(
       id: 3,
       title: 'Cream Cupcakes',
       description:
@@ -77,7 +77,7 @@ class FoodMenuData {
       bgImage: 'assets/images/desserts/08-cream-cupcakes-bg.png',
       bgColor: AppColors.pinkLight,
     ),
-    FoodMenuItem(
+    Recipe(
       id: 4,
       title: 'Chocolate Cheesecake',
       description:
@@ -101,7 +101,7 @@ class FoodMenuData {
       bgImage: 'assets/images/desserts/02-chocolate-cake-1-bg.png',
       bgColor: AppColors.orangeDark,
     ),
-    FoodMenuItem(
+    Recipe(
       id: 5,
       title: 'Fruit Plate',
       description:
@@ -116,7 +116,7 @@ class FoodMenuData {
       bgImage: 'assets/images/desserts/09-fruit-plate-bg.png',
       bgColor: AppColors.green,
     ),
-    FoodMenuItem(
+    Recipe(
       id: 6,
       title: 'Chocolate Donuts',
       description:
@@ -147,7 +147,7 @@ class FoodMenuData {
       bgImage: 'assets/images/desserts/03-chocolate-donuts-bg.png',
       bgColor: AppColors.sugar,
     ),
-    FoodMenuItem(
+    Recipe(
       id: 7,
       title: 'Strawberry Cake',
       description:
@@ -162,7 +162,7 @@ class FoodMenuData {
       bgImage: 'assets/images/desserts/13-strawberry-powdered-cake-bg.png',
       bgColor: AppColors.red,
     ),
-    FoodMenuItem(
+    Recipe(
       id: 8,
       title: 'Fluffy Cake',
       description:
@@ -193,7 +193,7 @@ class FoodMenuData {
       bgImage: 'assets/images/desserts/04-fluffy-cake-bg.png',
       bgColor: AppColors.orangeDark,
     ),
-    FoodMenuItem(
+    Recipe(
       id: 9,
       title: 'White Cream Cake',
       description:
@@ -228,7 +228,7 @@ class FoodMenuData {
       bgImage: 'assets/images/desserts/06-white-cream-cake-bg.png',
       bgColor: AppColors.sugar,
     ),
-    FoodMenuItem(
+    Recipe(
       id: 10,
       title: 'Fruit Pie',
       description:
@@ -243,7 +243,7 @@ class FoodMenuData {
       bgImage: 'assets/images/desserts/14-fruit-pie-bg.png',
       bgColor: AppColors.yellow,
     ),
-    FoodMenuItem(
+    Recipe(
       id: 11,
       title: 'Honey Cake',
       description:
@@ -279,7 +279,7 @@ class FoodMenuData {
       bgImage: 'assets/images/desserts/07-honey-cake-bg.png',
       bgColor: AppColors.honey,
     ),
-    FoodMenuItem(
+    Recipe(
       id: 12,
       title: 'Powdered Cake',
       description:
@@ -294,7 +294,7 @@ class FoodMenuData {
       bgImage: 'assets/images/desserts/11-powdered-cake-bg.png',
       bgColor: AppColors.sugar,
     ),
-    FoodMenuItem(
+    Recipe(
       id: 13,
       title: 'Strawberries',
       description:
@@ -309,7 +309,7 @@ class FoodMenuData {
       bgImage: 'assets/images/desserts/10-strawberries-bg.png',
       bgColor: AppColors.red,
     ),
-    FoodMenuItem(
+    Recipe(
       id: 14,
       title: 'Chocolate Cake',
       description:
@@ -324,7 +324,7 @@ class FoodMenuData {
       bgImage: 'assets/images/desserts/12-chocolate-cake-2-bg.png',
       bgColor: AppColors.orangeDark,
     ),
-    FoodMenuItem(
+    Recipe(
       id: 15,
       title: 'Apple Pie',
       description:

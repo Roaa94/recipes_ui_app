@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vikings/core/enums/screen_size.dart';
 
-class FoodMenuLayout {
+class RecipesLayout {
   final BuildContext context;
 
-  FoodMenuLayout(this.context);
+  RecipesLayout(this.context);
 
-  static FoodMenuLayout of(BuildContext context) {
-    return FoodMenuLayout(context);
+  static RecipesLayout of(BuildContext context) {
+    return RecipesLayout(context);
   }
 
   int get gridCrossAxisCount {

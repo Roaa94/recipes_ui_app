@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_vikings/menu/models/food_menu_item.dart';
-import 'package:flutter_vikings/menu/views/widgets/food_item_sliver_app_bar.dart';
+import 'package:flutter_vikings/recipes/models/recipe.dart';
+import 'package:flutter_vikings/recipes/views/widgets/recipe_page_sliver_app_bar.dart';
 
-class FoodMenuItemPage extends StatelessWidget {
-  const FoodMenuItemPage(
+class RecipePage extends StatelessWidget {
+  const RecipePage(
     this.menuItem, {
     Key? key,
   }) : super(key: key);
 
-  final FoodMenuItem menuItem;
+  final Recipe menuItem;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class FoodMenuItemPage extends StatelessWidget {
             sliver: SliverList(
               delegate: SliverChildListDelegate([
                 Hero(
-                  tag: '__food_item_${menuItem.id}_title__',
+                  tag: '__recipe_${menuItem.id}_title__',
                   child: Text(
                     menuItem.title,
                     style: Theme.of(context).textTheme.headline4!,
@@ -31,7 +31,7 @@ class FoodMenuItemPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 Hero(
-                  tag: '__food_item_${menuItem.id}_description__',
+                  tag: '__recipe_${menuItem.id}_description__',
                   child: Text(
                     menuItem.description,
                     style: Theme.of(context).textTheme.bodyText2!,

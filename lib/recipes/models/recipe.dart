@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class FoodMenuItem {
+class Recipe {
   final int id;
   final String title;
   final String description;
@@ -10,7 +10,7 @@ class FoodMenuItem {
   final String bgImage;
   final Color bgColor;
 
-  const FoodMenuItem({
+  const Recipe({
     required this.id,
     required this.title,
     required this.description,

@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_vikings/menu/food_menu_data.dart';
-import 'package:flutter_vikings/menu/food_menu_layout.dart';
-import 'package:flutter_vikings/menu/views/widgets/menu_list_item.dart';
-import 'package:flutter_vikings/menu/views/widgets/menu_list_item_wrapper.dart';
+import 'package:flutter_vikings/recipes/recipes_data.dart';
+import 'package:flutter_vikings/recipes/recipes_layout.dart';
+import 'package:flutter_vikings/recipes/views/widgets/recipe_list_item.dart';
+import 'package:flutter_vikings/recipes/views/widgets/recipe_list_item_wrapper.dart';
 
-class FoodMenuPage extends StatefulWidget {
-  const FoodMenuPage({Key? key}) : super(key: key);
+class RecipesPage extends StatefulWidget {
+  const RecipesPage({Key? key}) : super(key: key);
 
   @override
-  State<FoodMenuPage> createState() => _FoodMenuPageState();
+  State<RecipesPage> createState() => _RecipesPageState();
 }
 
-class _FoodMenuPageState extends State<FoodMenuPage> {
+class _RecipesPageState extends State<RecipesPage> {
   late final ValueNotifier<ScrollDirection> scrollDirectionNotifier;
 
   @override
@@ -50,19 +50,19 @@ class _FoodMenuPageState extends State<FoodMenuPage> {
             bottom: MediaQuery.of(context).padding.bottom + 20,
           ),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: FoodMenuLayout.of(context).gridCrossAxisCount,
-            childAspectRatio: FoodMenuLayout.of(context).gridChildAspectRatio,
+            crossAxisCount: RecipesLayout.of(context).gridCrossAxisCount,
+            childAspectRatio: RecipesLayout.of(context).gridChildAspectRatio,
             mainAxisSpacing: 25,
             crossAxisSpacing: 25,
           ),
-          itemCount: FoodMenuData.dessertMenu.length,
+          itemCount: RecipesData.dessertMenu.length,
           cacheExtent: 0,
           itemBuilder: (context, i) {
             return ValueListenableBuilder(
               valueListenable: scrollDirectionNotifier,
-              child: MenuListItem(FoodMenuData.dessertMenu[i]),
+              child: RecipeListItem(RecipesData.dessertMenu[i]),
               builder: (context, ScrollDirection scrollDirection, child) {
-                return MenuListItemWrapper(
+                return RecipeListItemWrapper(
                   scrollDirection: scrollDirection,
                   child: child!,
                 );
