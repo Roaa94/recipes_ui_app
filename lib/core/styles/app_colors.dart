@@ -46,6 +46,9 @@ class AppColors {
     return MaterialColor(color.value, colorShades);
   }
 
+  static Color textColorFromBackground(Color background) =>
+      background.computeLuminance() > 0.3 ? Colors.black : Colors.white;
+
   static Brightness getBrightness(Color color) {
     final double relativeLuminance = color.computeLuminance();
     const double kThreshold = 0.15;

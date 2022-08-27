@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_vikings/core/styles/app_colors.dart';
+import 'package:flutter_vikings/core/widgets/app_bar_leading.dart';
 import 'package:flutter_vikings/menu/models/food_menu_item.dart';
 
 class FoodItemSliverAppBar extends StatefulWidget {
@@ -59,6 +60,9 @@ class _FoodItemSliverAppBarState extends State<FoodItemSliverAppBar> {
       collapsedHeight: widget.collapsedHeight,
       systemOverlayStyle: SystemUiOverlayStyle(
         statusBarBrightness: AppColors.getBrightness(widget.menuItem.bgColor),
+      ),
+      leading: AppBarLeading(
+        bgColor: AppColors.textColorFromBackground(widget.menuItem.bgColor),
       ),
       expandedHeight: widget.expandedHeight == null
           ? null
