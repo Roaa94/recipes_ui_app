@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_vikings/core/styles/app_colors.dart';
 
 class FoodMenuItem {
   final int id;
@@ -10,7 +9,6 @@ class FoodMenuItem {
   final String image;
   final String bgImage;
   final Color bgColor;
-  final Color textColor;
 
   const FoodMenuItem({
     required this.id,
@@ -21,6 +19,5 @@ class FoodMenuItem {
     required this.image,
     required this.bgImage,
     required this.bgColor,
-    this.textColor = AppColors.text,
   });
 }

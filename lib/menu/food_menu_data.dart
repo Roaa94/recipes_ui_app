@@ -25,7 +25,6 @@ class FoodMenuData {
       image: 'assets/images/desserts/01-lemon-cheesecake.png',
       bgImage: 'assets/images/desserts/01-lemon-cheesecake-bg.png',
       bgColor: AppColors.yellow,
-      textColor: AppColors.text,
     ),
     FoodMenuItem(
       id: 2,
@@ -62,7 +61,6 @@ class FoodMenuData {
       image: 'assets/images/desserts/05-macaroons.png',
       bgImage: 'assets/images/desserts/05-macaroons-bg.png',
       bgColor: AppColors.primary,
-      textColor: AppColors.text,
     ),
     FoodMenuItem(
       id: 3,
@@ -78,7 +76,6 @@ class FoodMenuData {
       image: 'assets/images/desserts/08-cream-cupcakes.png',
       bgImage: 'assets/images/desserts/08-cream-cupcakes-bg.png',
       bgColor: AppColors.pinkLight,
-      textColor: AppColors.text,
     ),
     FoodMenuItem(
       id: 4,
@@ -103,7 +100,6 @@ class FoodMenuData {
       image: 'assets/images/desserts/02-chocolate-cake-1.png',
       bgImage: 'assets/images/desserts/02-chocolate-cake-1-bg.png',
       bgColor: AppColors.orangeDark,
-      textColor: AppColors.white,
     ),
     FoodMenuItem(
       id: 5,
@@ -119,7 +115,6 @@ class FoodMenuData {
       image: 'assets/images/desserts/09-fruit-plate.png',
       bgImage: 'assets/images/desserts/09-fruit-plate-bg.png',
       bgColor: AppColors.green,
-      textColor: AppColors.text,
     ),
     FoodMenuItem(
       id: 6,
@@ -151,7 +146,6 @@ class FoodMenuData {
       image: 'assets/images/desserts/03-chocolate-donuts.png',
       bgImage: 'assets/images/desserts/03-chocolate-donuts-bg.png',
       bgColor: AppColors.sugar,
-      textColor: AppColors.text,
     ),
     FoodMenuItem(
       id: 7,
@@ -167,7 +161,6 @@ class FoodMenuData {
       image: 'assets/images/desserts/13-strawberry-powdered-cake.png',
       bgImage: 'assets/images/desserts/13-strawberry-powdered-cake-bg.png',
       bgColor: AppColors.red,
-      textColor: AppColors.white,
     ),
     FoodMenuItem(
       id: 8,
@@ -199,7 +192,6 @@ class FoodMenuData {
       image: 'assets/images/desserts/04-fluffy-cake.png',
       bgImage: 'assets/images/desserts/04-fluffy-cake-bg.png',
       bgColor: AppColors.orangeDark,
-      textColor: AppColors.white,
     ),
     FoodMenuItem(
       id: 9,
@@ -235,7 +227,6 @@ class FoodMenuData {
       image: 'assets/images/desserts/06-white-cream-cake.png',
       bgImage: 'assets/images/desserts/06-white-cream-cake-bg.png',
       bgColor: AppColors.sugar,
-      textColor: AppColors.text,
     ),
     FoodMenuItem(
       id: 10,
@@ -251,7 +242,6 @@ class FoodMenuData {
       image: 'assets/images/desserts/14-fruit-pie.png',
       bgImage: 'assets/images/desserts/14-fruit-pie-bg.png',
       bgColor: AppColors.yellow,
-      textColor: AppColors.text,
     ),
     FoodMenuItem(
       id: 11,
@@ -288,7 +278,6 @@ class FoodMenuData {
       image: 'assets/images/desserts/07-honey-cake.png',
       bgImage: 'assets/images/desserts/07-honey-cake-bg.png',
       bgColor: AppColors.honey,
-      textColor: AppColors.text,
     ),
     FoodMenuItem(
       id: 12,
@@ -304,7 +293,6 @@ class FoodMenuData {
       image: 'assets/images/desserts/11-powdered-cake.png',
       bgImage: 'assets/images/desserts/11-powdered-cake-bg.png',
       bgColor: AppColors.sugar,
-      textColor: AppColors.text,
     ),
     FoodMenuItem(
       id: 13,
@@ -320,7 +308,6 @@ class FoodMenuData {
       image: 'assets/images/desserts/10-strawberries.png',
       bgImage: 'assets/images/desserts/10-strawberries-bg.png',
       bgColor: AppColors.red,
-      textColor: AppColors.white,
     ),
     FoodMenuItem(
       id: 14,
@@ -336,7 +323,6 @@ class FoodMenuData {
       image: 'assets/images/desserts/12-chocolate-cake-2.png',
       bgImage: 'assets/images/desserts/12-chocolate-cake-2-bg.png',
       bgColor: AppColors.orangeDark,
-      textColor: AppColors.white,
     ),
     FoodMenuItem(
       id: 15,
@@ -352,7 +338,6 @@ class FoodMenuData {
       image: 'assets/images/desserts/15-apple-pie.png',
       bgImage: 'assets/images/desserts/15-apple-pie-bg.png',
       bgColor: AppColors.sugar,
-      textColor: AppColors.text,
     ),
   ];
 }

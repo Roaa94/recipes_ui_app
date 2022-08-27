@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vikings/core/enums/screen_size.dart';
+import 'package:flutter_vikings/core/styles/app_colors.dart';
 import 'package:flutter_vikings/menu/models/food_menu_item.dart';
 import 'package:flutter_vikings/menu/views/widgets/menu_list_item_text_wrapper.dart';
 
@@ -32,7 +33,8 @@ class MenuListItemText extends StatelessWidget {
               child: Text(
                 menuItem.title,
                 style: Theme.of(context).textTheme.headline4!.copyWith(
-                      color: menuItem.textColor,
+                      color:
+                          AppColors.textColorFromBackground(menuItem.bgColor),
                     ),
               ),
             ),
@@ -43,7 +45,8 @@ class MenuListItemText extends StatelessWidget {
                 child: Text(
                   menuItem.description,
                   style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                        color: menuItem.textColor,
+                        color:
+                            AppColors.textColorFromBackground(menuItem.bgColor),
                       ),
                   maxLines: 3,
                   overflow: TextOverflow.ellipsis,
