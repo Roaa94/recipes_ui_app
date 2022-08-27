@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_vikings/playground/interactive_grid/home_page.dart';
+import 'package:flutter_vikings/core/styles/app_themes.dart';
+import 'package:flutter_vikings/menu/views/pages/menu_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,12 +15,10 @@ class MyApp extends StatelessWidget {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
 
     return MaterialApp(
-      title: 'FlutterVikings',
+      title: 'Flutter Vikings Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const HomePage(),
+      theme: AppThemes.main(),
+      home: const MenuPage(),
     );
   }
 }
