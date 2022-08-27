@@ -1,65 +1,24 @@
-import 'dart:math' as math;
-
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_vikings/core/styles/app_colors.dart';
 import 'package:flutter_vikings/core/widgets/app_bar_leading.dart';
 import 'package:flutter_vikings/recipes/models/recipe.dart';
+import 'package:flutter_vikings/recipes/views/widgets/recipe_page_image.dart';
+import 'package:flutter_vikings/recipes/views/widgets/recipe_page_image_bg.dart';
 
-class FoodItemSliverAppBar extends StatefulWidget {
-  const FoodItemSliverAppBar({
+class RecipePageSliderAppBar extends StatelessWidget {
+  const RecipePageSliderAppBar({
     Key? key,
-    this.scrollController,
-    required this.menuItem,
+    required this.recipe,
     this.expandedHeight = 340,
     this.collapsedHeight = 200,
+    this.imageRotationAngle = 0,
   }) : super(key: key);
 
-  final ScrollController? scrollController;
-  final Recipe menuItem;
+  final Recipe recipe;
   final double? expandedHeight;
   final double? collapsedHeight;
-
-  @override
-  State createState() => _FoodItemSliverAppBarState();
-}
-
-class _FoodItemSliverAppBarState extends State<FoodItemSliverAppBar> {
-  double imageRotationAngle = 0;
-
-  void scrollListener() {
-    if (widget.scrollController != null) {
-      ScrollDirection scrollDirection =
-          widget.scrollController!.position.userScrollDirection;
-      double scrollPosition = widget.scrollController!.position.pixels.abs();
-      if (scrollDirection == ScrollDirection.forward) {
-        setState(() {
-          imageRotationAngle += (scrollPosition * math.pi / 180) * 0.01;
-        });
-      } else if (scrollDirection == ScrollDirection.reverse) {
-        setState(() {
-          imageRotationAngle -= (scrollPosition * math.pi / 180) * 0.01;
-        });
-      }
-    }
-  }
-
-  @override
-  void initState() {
-    if (widget.scrollController != null) {
-      widget.scrollController!.addListener(scrollListener);
-    }
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    if (widget.scrollController != null) {
-      widget.scrollController!.removeListener(scrollListener);
-    }
-    super.dispose();
-  }
+  final double imageRotationAngle;
 
   @override
   Widget build(BuildContext context) {
@@ -67,60 +26,28 @@ class _FoodItemSliverAppBarState extends State<FoodItemSliverAppBar> {
       pinned: true,
       stretch: true,
       backgroundColor: Colors.transparent,
-      collapsedHeight: widget.collapsedHeight,
+      collapsedHeight: collapsedHeight,
       systemOverlayStyle: SystemUiOverlayStyle(
-        statusBarBrightness: AppColors.getBrightness(widget.menuItem.bgColor),
+        statusBarBrightness: AppColors.getBrightness(recipe.bgColor),
       ),
       leading: AppBarLeading(
-        bgColor: AppColors.textColorFromBackground(widget.menuItem.bgColor),
+        bgColor: AppColors.textColorFromBackground(recipe.bgColor),
       ),
-      expandedHeight: widget.expandedHeight == null
+      expandedHeight: expandedHeight == null
           ? null
-          : widget.expandedHeight! + MediaQuery.of(context).padding.top,
+          : expandedHeight! + MediaQuery.of(context).padding.top,
       flexibleSpace: Stack(
         children: [
-          Hero(
-            tag: '__recipe_${widget.menuItem.id}_image_bg__',
-            child: Container(
-              decoration: BoxDecoration(
-                color: widget.menuItem.bgColor,
-                borderRadius: const BorderRadius.only(
-                  bottomRight: Radius.circular(35),
-                  bottomLeft: Radius.circular(35),
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: AppColors.orangeDark.withOpacity(
-                      AppColors.getBrightness(widget.menuItem.bgColor) ==
-                              Brightness.dark
-                          ? 0.5
-                          : 0.2,
-                    ),
-                    blurRadius: 10,
-                    offset: const Offset(0, 5),
-                  ),
-                ],
-              ),
-              alignment: Alignment.center,
+          RecipePageImageBg(
+            recipe,
+            borderRadius: const BorderRadius.only(
+              bottomRight: Radius.circular(35),
+              bottomLeft: Radius.circular(35),
             ),
           ),
-          SafeArea(
-            bottom: false,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20),
-              child: Center(
-                child: Transform.rotate(
-                  angle: imageRotationAngle,
-                  child: Hero(
-                    tag: '__recipe_${widget.menuItem.id}_image__',
-                    child: Image.asset(
-                      widget.menuItem.image,
-                      width: MediaQuery.of(context).size.width * 0.75,
-                    ),
-                  ),
-                ),
-              ),
-            ),
+          RecipePageImage(
+            recipe,
+            imageRotationAngle: imageRotationAngle,
           ),
         ],
       ),

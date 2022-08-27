@@ -6,9 +6,11 @@ class AppBarLeading extends StatefulWidget {
   const AppBarLeading({
     Key? key,
     this.bgColor = AppColors.white,
+    this.text,
   }) : super(key: key);
 
   final Color bgColor;
+  final String? text;
 
   @override
   State<AppBarLeading> createState() => _AppBarLeadingState();
@@ -49,15 +51,30 @@ class _AppBarLeadingState extends State<AppBarLeading>
         scale: scaleAnimation,
         child: Container(
           margin: const EdgeInsets.only(left: 17),
+          padding: EdgeInsets.all(widget.text != null ? 10 : 0),
           decoration: BoxDecoration(
             color: widget.bgColor,
-            shape: BoxShape.circle,
+            borderRadius: BorderRadius.circular(widget.text != null ? 20 : 100),
           ),
-          child: Center(
-            child: Icon(
-              Icons.arrow_back,
-              color: AppColors.textColorFromBackground(widget.bgColor),
-            ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.arrow_back,
+                color: AppColors.textColorFromBackground(widget.bgColor),
+              ),
+              if (widget.text != null)
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Text(
+                    widget.text!,
+                    style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                          color:
+                              AppColors.textColorFromBackground(widget.bgColor),
+                        ),
+                  ),
+                ),
+            ],
           ),
         ),
       ),
