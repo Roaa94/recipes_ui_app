@@ -28,7 +28,7 @@ class AppTextStyles {
   static const TextStyle h5 = TextStyle(
     fontFamily: fontFamily,
     fontSize: 20,
-    fontWeight: FontWeight.w300,
+    fontWeight: FontWeight.w500,
   );
 
   static const TextStyle body = TextStyle(

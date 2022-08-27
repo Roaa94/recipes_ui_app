@@ -3,7 +3,9 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_vikings/core/enums/screen_size.dart';
+import 'package:flutter_vikings/core/widgets/delayed_fade_in_effect.dart';
 import 'package:flutter_vikings/recipes/models/recipe.dart';
+import 'package:flutter_vikings/recipes/views/widgets/ingredients_section.dart';
 import 'package:flutter_vikings/recipes/views/widgets/recipe_page_sidebar.dart';
 import 'package:flutter_vikings/recipes/views/widgets/recipe_page_sliver_app_bar.dart';
 
@@ -108,6 +110,14 @@ class _RecipePageState extends State<RecipePage> {
                           style: Theme.of(context).textTheme.bodyText2!,
                         ),
                       ),
+                      const SizedBox(height: 20),
+                      DelayedFadeInEffect(
+                        child: Text(
+                          'INGREDIENTS',
+                          style: Theme.of(context).textTheme.headline5,
+                        ),
+                      ),
+                      IngredientsSection(widget.recipe),
                     ]),
                   ),
                 ),
