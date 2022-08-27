@@ -41,6 +41,9 @@ class AppThemes {
         bodyText2: AppTextStyles.body.copyWith(
           color: isDark ? AppColors.white : AppColors.black,
         ),
+        subtitle1: AppTextStyles.bodySm.copyWith(
+          color: isDark ? AppColors.white : AppColors.black,
+        ),
       ),
     );
   }

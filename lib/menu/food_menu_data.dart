@@ -279,7 +279,7 @@ class FoodMenuData {
       textColor: AppColors.text,
     ),
     FoodMenuItem(
-      title: 'Strawberry Powdered Cake',
+      title: 'Strawberry Cake',
       description:
           'Jam-packed with fresh strawberries, this strawberry cake is one of the simplest, most delicious cakes you’ll ever make.',
       ingredients: [

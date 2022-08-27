@@ -36,6 +36,11 @@ class AppTextStyles {
     fontSize: 16,
   );
 
+  static const TextStyle bodySm = TextStyle(
+    fontFamily: fontFamily,
+    fontSize: 14,
+  );
+
   static const TextStyle bodyLg = TextStyle(
     fontFamily: fontFamily,
     fontSize: 18,
