@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_vikings/core/enums/screen_size.dart';
+import 'package:flutter_vikings/core/styles/app_colors.dart';
 import 'package:flutter_vikings/core/widgets/delayed_fade_in_effect.dart';
 import 'package:flutter_vikings/features/ingredients/views/widgets/ingredients_section.dart';
 import 'package:flutter_vikings/features/recipes/models/recipe.dart';
@@ -58,6 +59,8 @@ class _RecipePageState extends State<RecipePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor:
+          widget.recipe.bgColor == AppColors.sugar ? AppColors.yellow : null,
       body: Row(
         children: [
           if (ScreenSize.of(context).isLarge)
