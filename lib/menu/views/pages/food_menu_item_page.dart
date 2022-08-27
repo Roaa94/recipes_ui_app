@@ -18,6 +18,28 @@ class FoodMenuItemPage extends StatelessWidget {
           FoodItemSliverAppBar(
             menuItem: menuItem,
           ),
+          SliverPadding(
+            padding: const EdgeInsets.symmetric(horizontal: 17, vertical: 20),
+            sliver: SliverList(
+              delegate: SliverChildListDelegate([
+                Hero(
+                  tag: '__food_item_${menuItem.id}_title__',
+                  child: Text(
+                    menuItem.title,
+                    style: Theme.of(context).textTheme.headline4!,
+                  ),
+                ),
+                const SizedBox(height: 10),
+                Hero(
+                  tag: '__food_item_${menuItem.id}_description__',
+                  child: Text(
+                    menuItem.description,
+                    style: Theme.of(context).textTheme.bodyText2!,
+                  ),
+                ),
+              ]),
+            ),
+          ),
           const SliverToBoxAdapter(
             child: SizedBox(
               height: 1000,

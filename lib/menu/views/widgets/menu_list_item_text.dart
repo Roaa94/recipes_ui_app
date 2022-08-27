@@ -27,21 +27,27 @@ class MenuListItemText extends StatelessWidget {
               ? MainAxisAlignment.start
               : MainAxisAlignment.end,
           children: [
-            Text(
-              menuItem.title,
-              style: Theme.of(context).textTheme.headline4!.copyWith(
-                    color: menuItem.textColor,
-                  ),
+            Hero(
+              tag: '__food_item_${menuItem.id}_title__',
+              child: Text(
+                menuItem.title,
+                style: Theme.of(context).textTheme.headline4!.copyWith(
+                      color: menuItem.textColor,
+                    ),
+              ),
             ),
             const SizedBox(height: 10),
             Flexible(
-              child: Text(
-                menuItem.description,
-                style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                      color: menuItem.textColor,
-                    ),
-                maxLines: 3,
-                overflow: TextOverflow.ellipsis,
+              child: Hero(
+                tag: '__food_item_${menuItem.id}_description__',
+                child: Text(
+                  menuItem.description,
+                  style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                        color: menuItem.textColor,
+                      ),
+                  maxLines: 3,
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
             ),
           ],

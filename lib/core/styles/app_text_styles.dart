@@ -43,6 +43,7 @@ class AppTextStyles {
 
   static const TextStyle bodyLg = TextStyle(
     fontFamily: fontFamily,
+    fontWeight: FontWeight.w400,
     fontSize: 18,
   );
 
