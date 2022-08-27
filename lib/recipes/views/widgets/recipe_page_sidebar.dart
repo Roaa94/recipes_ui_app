@@ -34,10 +34,13 @@ class RecipePageSidebar extends StatelessWidget {
             ),
           ),
         ),
-        const Positioned(
+        Positioned(
           top: 20,
           left: 20,
-          child: AppBarLeading(text: 'Back to Recipes'),
+          child: AppBarLeading(
+            text: 'Back to Recipes',
+            popValue: imageRotationAngle,
+          ),
         ),
       ],
     );
