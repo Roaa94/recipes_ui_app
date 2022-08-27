@@ -12,12 +12,23 @@ class FoodMenuPage extends StatefulWidget {
 }
 
 class _FoodMenuPageState extends State<FoodMenuPage> {
-  final scrollDirectionNotifier =
-      ValueNotifier<ScrollDirection>(ScrollDirection.forward);
+  late final ValueNotifier<ScrollDirection> scrollDirectionNotifier;
+
+  @override
+  void initState() {
+    scrollDirectionNotifier =
+        ValueNotifier<ScrollDirection>(ScrollDirection.forward);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    scrollDirectionNotifier.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    print('rebuilt!');
     return Scaffold(
       appBar: AppBar(
         title: const Text('Desserts'),
