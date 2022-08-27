@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vikings/core/styles/app_colors.dart';
 import 'package:flutter_vikings/features/recipes/models/recipe.dart';
 import 'package:flutter_vikings/features/recipes/views/pages/recipe_page.dart';
+import 'package:flutter_vikings/features/recipes/views/widgets/recipe_list_item_gesture_detector.dart';
 import 'package:flutter_vikings/features/recipes/views/widgets/recipe_list_item_image.dart';
 import 'package:flutter_vikings/features/recipes/views/widgets/recipe_list_item_text.dart';
 
@@ -22,7 +23,7 @@ class _RecipeListItemState extends State<RecipeListItem> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return RecipeListItemGestureDetector(
       onTap: () {
         Navigator.of(context)
             .push(
