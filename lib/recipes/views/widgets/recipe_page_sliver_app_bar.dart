@@ -1,4 +1,7 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_vikings/core/styles/app_colors.dart';
 import 'package:flutter_vikings/core/widgets/app_bar_leading.dart';
@@ -23,15 +26,22 @@ class FoodItemSliverAppBar extends StatefulWidget {
 }
 
 class _FoodItemSliverAppBarState extends State<FoodItemSliverAppBar> {
+  double imageRotationAngle = 0;
+
   void scrollListener() {
-    if (widget.expandedHeight != null &&
-        widget.scrollController != null &&
-        widget.scrollController!.position.pixels > widget.expandedHeight!) {
-      // setState(() {
-      // });
-    } else {
-      // setState(() {
-      // });
+    if (widget.scrollController != null) {
+      ScrollDirection scrollDirection =
+          widget.scrollController!.position.userScrollDirection;
+      double scrollPosition = widget.scrollController!.position.pixels.abs();
+      if (scrollDirection == ScrollDirection.forward) {
+        setState(() {
+          imageRotationAngle += (scrollPosition * math.pi / 180) * 0.01;
+        });
+      } else if (scrollDirection == ScrollDirection.reverse) {
+        setState(() {
+          imageRotationAngle -= (scrollPosition * math.pi / 180) * 0.01;
+        });
+      }
     }
   }
 
@@ -99,11 +109,14 @@ class _FoodItemSliverAppBarState extends State<FoodItemSliverAppBar> {
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 20),
               child: Center(
-                child: Hero(
-                  tag: '__recipe_${widget.menuItem.id}_image__',
-                  child: Image.asset(
-                    widget.menuItem.image,
-                    width: MediaQuery.of(context).size.width * 0.75,
+                child: Transform.rotate(
+                  angle: imageRotationAngle,
+                  child: Hero(
+                    tag: '__recipe_${widget.menuItem.id}_image__',
+                    child: Image.asset(
+                      widget.menuItem.image,
+                      width: MediaQuery.of(context).size.width * 0.75,
+                    ),
                   ),
                 ),
               ),

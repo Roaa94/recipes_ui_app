@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vikings/recipes/models/recipe.dart';
 import 'package:flutter_vikings/recipes/views/widgets/recipe_page_sliver_app_bar.dart';
 
-class RecipePage extends StatelessWidget {
+class RecipePage extends StatefulWidget {
   const RecipePage(
     this.menuItem, {
     Key? key,
@@ -11,29 +11,38 @@ class RecipePage extends StatelessWidget {
   final Recipe menuItem;
 
   @override
+  State<RecipePage> createState() => _RecipePageState();
+}
+
+class _RecipePageState extends State<RecipePage> {
+  final ScrollController scrollController = ScrollController();
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
+        controller: scrollController,
         slivers: [
           FoodItemSliverAppBar(
-            menuItem: menuItem,
+            scrollController: scrollController,
+            menuItem: widget.menuItem,
           ),
           SliverPadding(
             padding: const EdgeInsets.symmetric(horizontal: 17, vertical: 20),
             sliver: SliverList(
               delegate: SliverChildListDelegate([
                 Hero(
-                  tag: '__recipe_${menuItem.id}_title__',
+                  tag: '__recipe_${widget.menuItem.id}_title__',
                   child: Text(
-                    menuItem.title,
+                    widget.menuItem.title,
                     style: Theme.of(context).textTheme.headline4!,
                   ),
                 ),
                 const SizedBox(height: 10),
                 Hero(
-                  tag: '__recipe_${menuItem.id}_description__',
+                  tag: '__recipe_${widget.menuItem.id}_description__',
                   child: Text(
-                    menuItem.description,
+                    widget.menuItem.description,
                     style: Theme.of(context).textTheme.bodyText2!,
                   ),
                 ),
