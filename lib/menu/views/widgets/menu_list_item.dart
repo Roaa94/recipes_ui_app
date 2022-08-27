@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_vikings/core/styles/app_colors.dart';
 import 'package:flutter_vikings/menu/models/menu_item.dart';
 
 class MenuListItem extends StatelessWidget {
@@ -15,8 +16,15 @@ class MenuListItem extends StatelessWidget {
       decoration: BoxDecoration(
         color: menuItem.bgColor,
         borderRadius: BorderRadius.circular(35),
+        boxShadow: [
+          BoxShadow(
+            color: AppColors.red.withOpacity(0.1),
+            blurRadius: 10,
+            offset: const Offset(0, 10),
+          ),
+        ],
       ),
-      height: 200,
+      height: 170,
       child: Row(
         children: [
           Expanded(
@@ -31,19 +39,20 @@ class MenuListItem extends StatelessWidget {
                       alignment: Alignment.bottomLeft,
                       child: Text(
                         menuItem.title,
-                        style: Theme.of(context).textTheme.headline3,
+                        style: Theme.of(context).textTheme.headline4!.copyWith(
+                              color: menuItem.textColor,
+                            ),
                       ),
                     ),
                   ),
                   const SizedBox(height: 10),
-                  Align(
-                    alignment: Alignment.bottomLeft,
-                    child: Text(
-                      menuItem.description,
-                      style: Theme.of(context).textTheme.subtitle1,
-                      maxLines: 3,
-                      overflow: TextOverflow.ellipsis,
-                    ),
+                  Text(
+                    menuItem.description,
+                    style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                          color: menuItem.textColor,
+                        ),
+                    maxLines: 3,
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ],
               ),
@@ -51,7 +60,11 @@ class MenuListItem extends StatelessWidget {
           ),
           Expanded(
             flex: 1,
-            child: Container(),
+            child: Stack(
+              children: [
+                Image.asset(menuItem.image),
+              ],
+            ),
           ),
         ],
       ),

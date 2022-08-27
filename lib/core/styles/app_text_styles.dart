@@ -22,7 +22,7 @@ class AppTextStyles {
   static const TextStyle h4 = TextStyle(
     fontFamily: fontFamily,
     fontSize: 25,
-    fontWeight: FontWeight.w300,
+    fontWeight: FontWeight.w500,
   );
 
   static const TextStyle h5 = TextStyle(

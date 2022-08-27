@@ -23,93 +23,7 @@ class FoodMenuData {
       ],
       image: 'assets/images/desserts/01-lemon-cheesecake.png',
       bgImage: 'assets/images/desserts/01-lemon-cheesecake-bg.png',
-      bgColor: AppColors.primary,
-      textColor: AppColors.text,
-    ),
-    FoodMenuItem(
-      title: 'Chocolate Cheesecake',
-      description:
-          "Treat family and friends to this decadent chocolate dessert. It's an indulgent end to a dinner party or weekend family meal",
-      ingredients: [
-        '150g digestive biscuits (about 10)',
-        '1 tbsp caster sugar',
-        '45g butter, melted, plus extra for the tin',
-        '150g dark chocolate',
-        '120ml double cream',
-        '2 tsp cocoa powder',
-        '200g full-fat cream cheese',
-        '115g caster sugar'
-      ],
-      instructions: [
-        'To make the biscuit base, crush the digestive biscuits with a rolling pin or blitz in a food processor, then tip into a bowl with the sugar and butter and stir to combine. Butter and line an 18cm springform tin and tip in the biscuit mixture, pushing it down with the back of a spoon. Chill in the fridge for 30 mins.',
-        'To make the cheesecake, melt the chocolate in short bursts in the microwave, then leave to cool slightly. Whip the cream in a large bowl using an electric whisk until soft peaks form, then fold in the cocoa powder. Beat the cream cheese and sugar together, then fold in the cream mixture and the cooled chocolate.',
-        'Spoon the cheesecake mixture over the biscuit base, levelling it out with the back of a spoon. Transfer to the freezer and freeze for 2 hrs, or until set. Remove from the tin and leave at room temperature to soften for about 20 mins before serving.',
-      ],
-      image: 'assets/images/desserts/02-chocolate-cake-1.png',
-      bgImage: 'assets/images/desserts/02-chocolate-cake-1-bg.png',
-      bgColor: AppColors.primary,
-      textColor: AppColors.text,
-    ),
-    FoodMenuItem(
-      title: 'Chocolate Donuts',
-      description:
-          'Moist and fluffy donuts that are baked, not fried, and full of chocolate. Covered in a thick chocolate glaze, these are perfect for any chocoholic who wants a chocolate version of this classic treat.',
-      ingredients: [
-        '1 cup (140g) all-purpose flour',
-        '1/4 cup (25g) unsweetened cocoa powder',
-        '1/2 teaspoon baking powder',
-        '1/2 teaspoon baking soda',
-        '1/8 teaspoon salt',
-        '1 large egg',
-        '1/2 cup (100g) granulated sugar',
-        '1/3 cup (80 ml) milk',
-        '1/4 cup (60 ml) yogurt',
-        '2 tablespoons (30g) unsalted butter, melted',
-        '1/2 teaspoon vanilla extract',
-      ],
-      instructions: [
-        'Preheat oven to 350°F/180°. Grease a donut pan with oil or butter. Set aside.',
-        'Make the donuts: Whisk together the flour, cocoa powder, baking powder, baking soda, and salt in a large bowl. Set aside.',
-        'In a medium bowl whisk egg with sugar until well combined. Add milk, yogurt, melted butter and vanilla extract, and whisk until combined. Pour into the flour mixture and mix until just combined. The batter will be thick.',
-        'Fill donut cavities with batter ¾ way full using a spoon or a piping bag (much easier). Cut a corner off the bottom of the bag and pipe the batter into each donut cup.',
-        'Bake for 9–10 minutes or until a toothpick inserted into the center of the donuts comes out clean. Allow to cool for 5 minutes in pan, then remove donuts from pan and transfer to a wire rack. Allow to cool completely before glazing.',
-        'Make the chocolate glaze: Melt the chocolate, heavy cream, and butter gently in the microwave (in 30-second intervals, stirring in between) or a double boiler until smooth. Dip the tops of the donuts into the chocolate glaze, and place on a cooling rack to set.',
-        'Donuts are best eaten the same day or keep them for up to 3 days in the refrigerator.',
-      ],
-      image: 'assets/images/desserts/03-chocolate-donuts.png',
-      bgImage: 'assets/images/desserts/03-chocolate-donuts-bg.png',
-      bgColor: AppColors.primary,
-      textColor: AppColors.text,
-    ),
-    FoodMenuItem(
-      title: 'Fluffy Cake',
-      description:
-          "This is a very good everyday cake leavened with baking powder. It's relatively light—it isn't loaded with butter, and it calls for only 2 eggs and 2 percent milk. Mine was perfectly baked after 30 minutes. After 10 minutes on the cooling rack, the cake released from the pans easily.",
-      ingredients: [
-        '1/2 cup (1 stick) unsalted butter, cut into 2-tablespoon pieces and softened; plus more for coating pans',
-        '2 1/4 cups all-purpose flour, plus more for coating pans',
-        '1 1/3 cups granulated sugar',
-        '1 tablespoon baking powder',
-        '1/2 teaspoon salt',
-        '1 tablespoon vanilla extract',
-        '1 cup 2 percent milk, room temperature',
-        '2 large eggs, room temperature',
-      ],
-      instructions: [
-        'Gather the ingredients. Preheat the oven to 350 F.',
-        'Butter and flour two 9-inch cake pans. If desired, line the bottom with a circle of parchment',
-        'Combine the sugar, flour, baking powder, and salt in the bowl of a stand mixer fitted with the paddle attachment. Mix until the dry ingredients are combined.',
-        'With the mixer on the lowest speed, add the butter one chunk at a time and blend until the mixture looks sandy, between 30 seconds and 1 minute. Scrape down the bowl and paddle with a rubber spatula.',
-        'Add the vanilla extract and, with the mixer on low, pour in the milk. Stop and scrape, then mix for another minute.',
-        'Add the first egg and mix on medium-low until completely incorporated. Add the second egg and do the same. Scrape down the bowl and mix until fluffy on medium speed, about 30 seconds.',
-        'Pour the batter into the prepared pans and give each one a couple of solid taps on the countertop to release any air bubbles. Transfer the pans to the preheated oven.',
-        'Bake for about 30 minutes, or until a toothpick inserted into the center comes out clean or with a crumb or two attached. The tops will be golden brown, the edges will pull away from the sides of the pan, and the cakes will spring back when you touch them.',
-        'Cool the cakes in their pans on a wire rack for 10 minutes, then loosen the edges by running a knife along the sides of the pan. Turn the cakes out onto the racks and cool for at least 1 hour before frosting.',
-        'Frost with your choice of frosting and enjoy.',
-      ],
-      image: 'assets/images/desserts/04-fluffy-cake.png',
-      bgImage: 'assets/images/desserts/04-fluffy-cake-bg.png',
-      bgColor: AppColors.primary,
+      bgColor: AppColors.yellow,
       textColor: AppColors.text,
     ),
     FoodMenuItem(
@@ -149,6 +63,137 @@ class FoodMenuData {
       textColor: AppColors.text,
     ),
     FoodMenuItem(
+      title: 'Cream Cupcakes',
+      description:
+          "Bake these easy vanilla cupcakes in just 35 minutes. Perfect for birthdays, picnics or whenever you fancy a sweet treat, they're sure to be a crowd-pleaser",
+      ingredients: [
+        '',
+      ],
+      instructions: [
+        '',
+      ],
+      image: 'assets/images/desserts/08-cream-cupcakes.png',
+      bgImage: 'assets/images/desserts/08-cream-cupcakes-bg.png',
+      bgColor: AppColors.pinkLight,
+      textColor: AppColors.text,
+    ),
+    FoodMenuItem(
+      title: 'Chocolate Cheesecake',
+      description:
+          "Treat family and friends to this decadent chocolate dessert. It's an indulgent end to a dinner party or weekend family meal",
+      ingredients: [
+        '150g digestive biscuits (about 10)',
+        '1 tbsp caster sugar',
+        '45g butter, melted, plus extra for the tin',
+        '150g dark chocolate',
+        '120ml double cream',
+        '2 tsp cocoa powder',
+        '200g full-fat cream cheese',
+        '115g caster sugar'
+      ],
+      instructions: [
+        'To make the biscuit base, crush the digestive biscuits with a rolling pin or blitz in a food processor, then tip into a bowl with the sugar and butter and stir to combine. Butter and line an 18cm springform tin and tip in the biscuit mixture, pushing it down with the back of a spoon. Chill in the fridge for 30 mins.',
+        'To make the cheesecake, melt the chocolate in short bursts in the microwave, then leave to cool slightly. Whip the cream in a large bowl using an electric whisk until soft peaks form, then fold in the cocoa powder. Beat the cream cheese and sugar together, then fold in the cream mixture and the cooled chocolate.',
+        'Spoon the cheesecake mixture over the biscuit base, levelling it out with the back of a spoon. Transfer to the freezer and freeze for 2 hrs, or until set. Remove from the tin and leave at room temperature to soften for about 20 mins before serving.',
+      ],
+      image: 'assets/images/desserts/02-chocolate-cake-1.png',
+      bgImage: 'assets/images/desserts/02-chocolate-cake-1-bg.png',
+      bgColor: AppColors.orangeDark,
+      textColor: AppColors.white,
+    ),
+    FoodMenuItem(
+      title: 'Fruit Plate',
+      description:
+          "Melons - they're firmer so make a great base for the softer berries and fruits. Tropical fruit - the top of a pineapple can be included for height, while dragonfruit looks vibrant. Check out speciality shops for interesting tropical fruit. Berries - plump, ripe, juicy berries are always a winner on a fruit platter",
+      ingredients: [
+        '',
+      ],
+      instructions: [
+        '',
+      ],
+      image: 'assets/images/desserts/09-fruit-plate.png',
+      bgImage: 'assets/images/desserts/09-fruit-plate-bg.png',
+      bgColor: AppColors.green,
+      textColor: AppColors.text,
+    ),
+    FoodMenuItem(
+      title: 'Chocolate Donuts',
+      description:
+          'Moist and fluffy donuts that are baked, not fried, and full of chocolate. Covered in a thick chocolate glaze, these are perfect for any chocoholic who wants a chocolate version of this classic treat.',
+      ingredients: [
+        '1 cup (140g) all-purpose flour',
+        '1/4 cup (25g) unsweetened cocoa powder',
+        '1/2 teaspoon baking powder',
+        '1/2 teaspoon baking soda',
+        '1/8 teaspoon salt',
+        '1 large egg',
+        '1/2 cup (100g) granulated sugar',
+        '1/3 cup (80 ml) milk',
+        '1/4 cup (60 ml) yogurt',
+        '2 tablespoons (30g) unsalted butter, melted',
+        '1/2 teaspoon vanilla extract',
+      ],
+      instructions: [
+        'Preheat oven to 350°F/180°. Grease a donut pan with oil or butter. Set aside.',
+        'Make the donuts: Whisk together the flour, cocoa powder, baking powder, baking soda, and salt in a large bowl. Set aside.',
+        'In a medium bowl whisk egg with sugar until well combined. Add milk, yogurt, melted butter and vanilla extract, and whisk until combined. Pour into the flour mixture and mix until just combined. The batter will be thick.',
+        'Fill donut cavities with batter ¾ way full using a spoon or a piping bag (much easier). Cut a corner off the bottom of the bag and pipe the batter into each donut cup.',
+        'Bake for 9–10 minutes or until a toothpick inserted into the center of the donuts comes out clean. Allow to cool for 5 minutes in pan, then remove donuts from pan and transfer to a wire rack. Allow to cool completely before glazing.',
+        'Make the chocolate glaze: Melt the chocolate, heavy cream, and butter gently in the microwave (in 30-second intervals, stirring in between) or a double boiler until smooth. Dip the tops of the donuts into the chocolate glaze, and place on a cooling rack to set.',
+        'Donuts are best eaten the same day or keep them for up to 3 days in the refrigerator.',
+      ],
+      image: 'assets/images/desserts/03-chocolate-donuts.png',
+      bgImage: 'assets/images/desserts/03-chocolate-donuts-bg.png',
+      bgColor: AppColors.sugar,
+      textColor: AppColors.text,
+    ),
+    FoodMenuItem(
+      title: 'Strawberry Cake',
+      description:
+      'Jam-packed with fresh strawberries, this strawberry cake is one of the simplest, most delicious cakes you’ll ever make.',
+      ingredients: [
+        '',
+      ],
+      instructions: [
+        '',
+      ],
+      image: 'assets/images/desserts/13-strawberry-powdered-cake.png',
+      bgImage: 'assets/images/desserts/13-strawberry-powdered-cake-bg.png',
+      bgColor: AppColors.red,
+      textColor: AppColors.white,
+    ),
+    FoodMenuItem(
+      title: 'Fluffy Cake',
+      description:
+          "This is a very good everyday cake leavened with baking powder. It's relatively light—it isn't loaded with butter, and it calls for only 2 eggs and 2 percent milk. Mine was perfectly baked after 30 minutes. After 10 minutes on the cooling rack, the cake released from the pans easily.",
+      ingredients: [
+        '1/2 cup (1 stick) unsalted butter, cut into 2-tablespoon pieces and softened; plus more for coating pans',
+        '2 1/4 cups all-purpose flour, plus more for coating pans',
+        '1 1/3 cups granulated sugar',
+        '1 tablespoon baking powder',
+        '1/2 teaspoon salt',
+        '1 tablespoon vanilla extract',
+        '1 cup 2 percent milk, room temperature',
+        '2 large eggs, room temperature',
+      ],
+      instructions: [
+        'Gather the ingredients. Preheat the oven to 350 F.',
+        'Butter and flour two 9-inch cake pans. If desired, line the bottom with a circle of parchment',
+        'Combine the sugar, flour, baking powder, and salt in the bowl of a stand mixer fitted with the paddle attachment. Mix until the dry ingredients are combined.',
+        'With the mixer on the lowest speed, add the butter one chunk at a time and blend until the mixture looks sandy, between 30 seconds and 1 minute. Scrape down the bowl and paddle with a rubber spatula.',
+        'Add the vanilla extract and, with the mixer on low, pour in the milk. Stop and scrape, then mix for another minute.',
+        'Add the first egg and mix on medium-low until completely incorporated. Add the second egg and do the same. Scrape down the bowl and mix until fluffy on medium speed, about 30 seconds.',
+        'Pour the batter into the prepared pans and give each one a couple of solid taps on the countertop to release any air bubbles. Transfer the pans to the preheated oven.',
+        'Bake for about 30 minutes, or until a toothpick inserted into the center comes out clean or with a crumb or two attached. The tops will be golden brown, the edges will pull away from the sides of the pan, and the cakes will spring back when you touch them.',
+        'Cool the cakes in their pans on a wire rack for 10 minutes, then loosen the edges by running a knife along the sides of the pan. Turn the cakes out onto the racks and cool for at least 1 hour before frosting.',
+        'Frost with your choice of frosting and enjoy.',
+      ],
+      image: 'assets/images/desserts/04-fluffy-cake.png',
+      bgImage: 'assets/images/desserts/04-fluffy-cake-bg.png',
+      bgColor: AppColors.orangeDark,
+      textColor: AppColors.white,
+    ),
+    FoodMenuItem(
       title: 'White Cream Cake',
       description:
           'This White Chocolate Cake is both decadent and delicious! White chocolate is incorporated into the cake layers, the frosting, and the drip for a stunning monochrome effect.',
@@ -180,7 +225,22 @@ class FoodMenuData {
       ],
       image: 'assets/images/desserts/06-white-cream-cake.png',
       bgImage: 'assets/images/desserts/06-white-cream-cake-bg.png',
-      bgColor: AppColors.primary,
+      bgColor: AppColors.sugar,
+      textColor: AppColors.text,
+    ),
+    FoodMenuItem(
+      title: 'Fruit Pie',
+      description:
+      'Bake a hearty fruit pie for dessert. Our collection of year-round pastry classics includes apple & blackberry, summer berries, lemon meringue and mince pies.',
+      ingredients: [
+        '',
+      ],
+      instructions: [
+        '',
+      ],
+      image: 'assets/images/desserts/14-fruit-pie.png',
+      bgImage: 'assets/images/desserts/14-fruit-pie-bg.png',
+      bgColor: AppColors.yellow,
       textColor: AppColors.text,
     ),
     FoodMenuItem(
@@ -216,36 +276,7 @@ class FoodMenuData {
       ],
       image: 'assets/images/desserts/07-honey-cake.png',
       bgImage: 'assets/images/desserts/07-honey-cake-bg.png',
-      bgColor: AppColors.primary,
-      textColor: AppColors.text,
-    ),
-    FoodMenuItem(
-      title: 'Cream Cupcakes',
-      description: '',
-      ingredients: [
-        '',
-      ],
-      instructions: [
-        '',
-      ],
-      image: 'assets/images/desserts/08-cream-cupcakes.png',
-      bgImage: 'assets/images/desserts/08-cream-cupcakes-bg.png',
-      bgColor: AppColors.primary,
-      textColor: AppColors.text,
-    ),
-    FoodMenuItem(
-      title: 'Fruit Plate',
-      description:
-          "Melons - they're firmer so make a great base for the softer berries and fruits. Tropical fruit - the top of a pineapple can be included for height, while dragonfruit looks vibrant. Check out speciality shops for interesting tropical fruit. Berries - plump, ripe, juicy berries are always a winner on a fruit platter",
-      ingredients: [
-        '',
-      ],
-      instructions: [
-        '',
-      ],
-      image: 'assets/images/desserts/09-fruit-plate.png',
-      bgImage: 'assets/images/desserts/09-fruit-plate-bg.png',
-      bgColor: AppColors.primary,
+      bgColor: AppColors.honey,
       textColor: AppColors.text,
     ),
     FoodMenuItem(
@@ -260,7 +291,7 @@ class FoodMenuData {
       ],
       image: 'assets/images/desserts/11-powdered-cake.png',
       bgImage: 'assets/images/desserts/11-powdered-cake-bg.png',
-      bgColor: AppColors.primary,
+      bgColor: AppColors.sugar,
       textColor: AppColors.text,
     ),
     FoodMenuItem(
@@ -275,38 +306,8 @@ class FoodMenuData {
       ],
       image: 'assets/images/desserts/12-chocolate-cake-2.png',
       bgImage: 'assets/images/desserts/12-chocolate-cake-2-bg.png',
-      bgColor: AppColors.primary,
-      textColor: AppColors.text,
-    ),
-    FoodMenuItem(
-      title: 'Strawberry Cake',
-      description:
-          'Jam-packed with fresh strawberries, this strawberry cake is one of the simplest, most delicious cakes you’ll ever make.',
-      ingredients: [
-        '',
-      ],
-      instructions: [
-        '',
-      ],
-      image: 'assets/images/desserts/13-strawberry-powdered-cake.png',
-      bgImage: 'assets/images/desserts/13-strawberry-powdered-cake-bg.png',
-      bgColor: AppColors.primary,
-      textColor: AppColors.text,
-    ),
-    FoodMenuItem(
-      title: 'Fruit Pie',
-      description:
-          'Bake a hearty fruit pie for dessert. Our collection of year-round pastry classics includes apple & blackberry, summer berries, lemon meringue and mince pies.',
-      ingredients: [
-        '',
-      ],
-      instructions: [
-        '',
-      ],
-      image: 'assets/images/desserts/14-fruit-pie.png',
-      bgImage: 'assets/images/desserts/14-fruit-pie-bg.png',
-      bgColor: AppColors.primary,
-      textColor: AppColors.text,
+      bgColor: AppColors.orangeDark,
+      textColor: AppColors.white,
     ),
     FoodMenuItem(
       title: 'Apple Pie',
@@ -320,7 +321,7 @@ class FoodMenuData {
       ],
       image: 'assets/images/desserts/15-apple-pie.png',
       bgImage: 'assets/images/desserts/15-apple-pie-bg.png',
-      bgColor: AppColors.primary,
+      bgColor: AppColors.sugar,
       textColor: AppColors.text,
     ),
   ];

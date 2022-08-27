@@ -42,12 +42,12 @@ class _FoodMenuPageState extends State<FoodMenuPage> {
           padding: EdgeInsets.only(
             left: 17,
             right: 17,
-            top: 20,
+            top: 10,
             bottom: MediaQuery.of(context).padding.bottom + 20,
           ),
           itemCount: FoodMenuData.dessertMenu.length,
           cacheExtent: 0,
-          separatorBuilder: (context, i) => const SizedBox(height: 20),
+          separatorBuilder: (context, i) => const SizedBox(height: 25),
           itemBuilder: (context, i) {
             return ValueListenableBuilder(
               valueListenable: scrollDirectionNotifier,
