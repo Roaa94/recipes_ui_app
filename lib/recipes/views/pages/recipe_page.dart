@@ -11,9 +11,11 @@ class RecipePage extends StatefulWidget {
   const RecipePage(
     this.recipe, {
     Key? key,
+    this.initialImageRotationAngle = 0,
   }) : super(key: key);
 
   final Recipe recipe;
+  final double initialImageRotationAngle;
 
   @override
   State<RecipePage> createState() => _RecipePageState();
@@ -21,8 +23,7 @@ class RecipePage extends StatefulWidget {
 
 class _RecipePageState extends State<RecipePage> {
   final ScrollController scrollController = ScrollController();
-  final ValueNotifier<double> imageRotationAngleNotifier =
-      ValueNotifier<double>(0);
+  late final ValueNotifier<double> imageRotationAngleNotifier;
 
   void scrollListener() {
     ScrollDirection scrollDirection =
@@ -40,12 +41,15 @@ class _RecipePageState extends State<RecipePage> {
   @override
   void initState() {
     scrollController.addListener(scrollListener);
+    imageRotationAngleNotifier =
+        ValueNotifier<double>(widget.initialImageRotationAngle);
     super.initState();
   }
 
   @override
   void dispose() {
     scrollController.removeListener(scrollListener);
+    imageRotationAngleNotifier.dispose();
     super.dispose();
   }
 

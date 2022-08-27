@@ -30,7 +30,10 @@ class _RecipeListItemState extends State<RecipeListItem> {
             transitionDuration: const Duration(milliseconds: 300),
             pageBuilder: (BuildContext context, Animation<double> animation,
                 Animation<double> secondaryAnimation) {
-              return RecipePage(widget.menuItem);
+              return RecipePage(
+                widget.menuItem,
+                initialImageRotationAngle: recipeImageRotationAngle,
+              );
             },
             transitionsBuilder: (BuildContext context,
                 Animation<double> animation,
