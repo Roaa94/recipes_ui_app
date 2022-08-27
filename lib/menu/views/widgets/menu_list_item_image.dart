@@ -15,21 +15,13 @@ class MenuListItemImage extends StatelessWidget {
   Widget build(BuildContext context) {
     double imageSize = FoodMenuLayout.of(context).menuItemImageSize;
 
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(35),
-      child: Stack(
-        children: [
-          Positioned(
-            bottom: -20,
-            right: -20,
-            child: MenuListItemImageWrapper(
-              child: Image.asset(
-                menuItem.image,
-                width: imageSize,
-              ),
-            ),
-          ),
-        ],
+    return MenuListItemImageWrapper(
+      child: Hero(
+        tag: '__food_item_${menuItem.id}_image__',
+        child: Image.asset(
+          menuItem.image,
+          width: imageSize,
+        ),
       ),
     );
   }

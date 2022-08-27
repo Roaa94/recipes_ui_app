@@ -58,20 +58,23 @@ class _MenuListItemImageWrapperState extends State<MenuListItemImageWrapper>
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    return AnimatedBuilder(
-      animation: animationController,
-      child: widget.child,
-      builder: (context, child) {
-        return Transform.scale(
-          scale: scaleAnimation.value,
-          alignment: Alignment.bottomRight,
-          child: Transform.rotate(
-            angle: rotationAnimation.value,
+    return Transform.translate(
+      offset: const Offset(20, 20),
+      child: AnimatedBuilder(
+        animation: animationController,
+        child: widget.child,
+        builder: (context, child) {
+          return Transform.scale(
+            scale: scaleAnimation.value,
             alignment: Alignment.bottomRight,
-            child: child,
-          ),
-        );
-      },
+            child: Transform.rotate(
+              angle: rotationAnimation.value,
+              alignment: Alignment.bottomRight,
+              child: child,
+            ),
+          );
+        },
+      ),
     );
   }
 
