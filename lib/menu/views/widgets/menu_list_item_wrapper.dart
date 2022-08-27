@@ -22,20 +22,21 @@ class _MenuListItemWrapperState extends State<MenuListItemWrapper>
   late final AnimationController animationController;
   late final Animation<double> scaleAnimation;
   late final Animation<double> perspectiveAnimation;
+  late final Animation<AlignmentGeometry> alignmentAnimation;
 
   static const double perspectiveValue = 0.004;
-
-  int get perspectiveDirectionMultiplier =>
-      widget.scrollDirection == ScrollDirection.forward ? -1 : 1;
-
-  AlignmentGeometry get directionAlignment =>
-      widget.scrollDirection == ScrollDirection.forward
-          ? Alignment.bottomCenter
-          : Alignment.topCenter;
 
   @override
   void initState() {
     super.initState();
+    final int perspectiveDirectionMultiplier =
+        widget.scrollDirection == ScrollDirection.forward ? -1 : 1;
+
+    final AlignmentGeometry directionAlignment =
+        widget.scrollDirection == ScrollDirection.forward
+            ? Alignment.bottomCenter
+            : Alignment.topCenter;
+
     animationController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 500),
@@ -57,6 +58,16 @@ class _MenuListItemWrapperState extends State<MenuListItemWrapper>
         curve: const Interval(0, 1, curve: Curves.easeOut),
       ),
     );
+
+    alignmentAnimation = Tween<AlignmentGeometry>(
+      begin: directionAlignment,
+      end: Alignment.center,
+    ).animate(
+      CurvedAnimation(
+        parent: animationController,
+        curve: const Interval(0, 1, curve: Curves.easeOut),
+      ),
+    );
   }
 
   @override
@@ -71,12 +82,12 @@ class _MenuListItemWrapperState extends State<MenuListItemWrapper>
     return AnimatedBuilder(
       animation: animationController,
       child: widget.child,
-      builder: (context, child) => Transform.scale(
-        scale: scaleAnimation.value,
-        child: Transform(
-          transform: Matrix4.identity()
-            ..setEntry(3, 1, perspectiveAnimation.value),
-          alignment: directionAlignment,
+      builder: (context, child) => Transform(
+        transform: Matrix4.identity()
+          ..setEntry(3, 1, perspectiveAnimation.value),
+        alignment: alignmentAnimation.value,
+        child: Transform.scale(
+          scale: scaleAnimation.value,
           child: child,
         ),
       ),
