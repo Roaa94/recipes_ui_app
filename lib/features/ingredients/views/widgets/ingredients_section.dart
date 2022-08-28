@@ -14,7 +14,7 @@ class IngredientsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      padding: const EdgeInsets.symmetric(vertical: 10),
+      padding: const EdgeInsets.symmetric(vertical: 20),
       physics: const NeverScrollableScrollPhysics(),
       itemCount: recipe.ingredients.length,
       shrinkWrap: true,
