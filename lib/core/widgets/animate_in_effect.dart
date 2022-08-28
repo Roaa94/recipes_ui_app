@@ -5,17 +5,19 @@ class AnimateInEffect extends StatefulWidget {
     Key? key,
     required this.child,
     this.intervalStart = 0,
+    this.keepAlive = false,
   }) : super(key: key);
 
   final Widget child;
   final double intervalStart;
+  final bool keepAlive;
 
   @override
   State<AnimateInEffect> createState() => _AnimateInEffectState();
 }
 
 class _AnimateInEffectState extends State<AnimateInEffect>
-    with SingleTickerProviderStateMixin {
+    with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
   late final AnimationController animationController;
   late final Animation<Offset> offsetAnimation;
   late final Animation<double> fadeAnimation;
@@ -65,6 +67,7 @@ class _AnimateInEffectState extends State<AnimateInEffect>
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return AnimatedBuilder(
       animation: animationController,
       builder: (context, child) => Transform.translate(
@@ -77,4 +80,7 @@ class _AnimateInEffectState extends State<AnimateInEffect>
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => widget.keepAlive;
 }
