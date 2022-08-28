@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_vikings/core/enums/screen_size.dart';
 import 'package:flutter_vikings/core/styles/app_colors.dart';
-import 'package:flutter_vikings/core/widgets/gyroscope_or_pointer_effect.dart';
+import 'package:flutter_vikings/core/widgets/gyroscope_effect.dart';
 import 'package:flutter_vikings/features/recipes/models/recipe.dart';
 
 class RecipeImagePattern extends StatelessWidget {
@@ -23,10 +23,11 @@ class RecipeImagePattern extends StatelessWidget {
     AlignmentGeometry alignment = ScreenSize.of(context).isLarge
         ? Alignment.center
         : Alignment.bottomCenter;
+
     return Stack(
       clipBehavior: Clip.none,
       children: [
-        GyroscopeOrPointerEffect(
+        GyroscopeEffect(
           offsetMultiplier: 1.5,
           maxMovableDistance: 12,
           child: Align(
@@ -44,7 +45,7 @@ class RecipeImagePattern extends StatelessWidget {
             ),
           ),
         ),
-        GyroscopeOrPointerEffect(
+        GyroscopeEffect(
           child: ClipRRect(
             borderRadius: borderRadius,
             child: Container(
