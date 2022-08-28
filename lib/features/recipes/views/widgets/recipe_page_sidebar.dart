@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vikings/core/widgets/app_bar_leading.dart';
 import 'package:flutter_vikings/features/recipes/models/recipe.dart';
 import 'package:flutter_vikings/features/recipes/views/widgets/recipe_image.dart';
+import 'package:flutter_vikings/features/recipes/views/widgets/recipe_image_pattern.dart';
 import 'package:flutter_vikings/features/recipes/views/widgets/recipe_page_image_bg.dart';
 
 class RecipePageSidebar extends StatelessWidget {
@@ -25,6 +26,14 @@ class RecipePageSidebar extends StatelessWidget {
             topRight: Radius.circular(35),
           ),
         ),
+        if (recipe.bgImageLg.isNotEmpty)
+          RecipeImagePattern(
+            recipe,
+            borderRadius: const BorderRadius.only(
+              bottomRight: Radius.circular(35),
+              topRight: Radius.circular(35),
+            ),
+          ),
         Center(
           child: SizedBox(
             width: MediaQuery.of(context).size.width * 0.4,
