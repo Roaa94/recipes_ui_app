@@ -35,6 +35,7 @@ class RecipePageSidebar extends StatelessWidget {
           ),
           if (recipe.bgImageName.isNotEmpty)
             FadeInEffect(
+              intervalStart: 0.5,
               child: RecipeImagePatternMouse(
                 recipe,
                 offset: offset,

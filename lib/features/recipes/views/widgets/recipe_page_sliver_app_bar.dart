@@ -54,6 +54,7 @@ class RecipePageSliderAppBar extends StatelessWidget {
           if (recipe.bgImage.isNotEmpty)
             FlexibleSpaceBar(
               background: FadeInEffect(
+                intervalStart: 0.5,
                 child: Opacity(
                   opacity: 0.6,
                   child: RecipeImagePattern(

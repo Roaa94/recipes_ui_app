@@ -4,7 +4,7 @@ class FadeInEffect extends StatefulWidget {
   const FadeInEffect({
     Key? key,
     required this.child,
-    this.intervalStart = 0.5,
+    this.intervalStart = 0,
   }) : super(key: key);
 
   final Widget child;
