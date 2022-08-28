@@ -9,11 +9,11 @@ import 'package:flutter_vikings/features/recipes/views/widgets/recipe_list_item_
 
 class RecipeListItem extends StatefulWidget {
   const RecipeListItem(
-    this.menuItem, {
+    this.recipe, {
     Key? key,
   }) : super(key: key);
 
-  final Recipe menuItem;
+  final Recipe recipe;
 
   @override
   State<RecipeListItem> createState() => _RecipeListItemState();
@@ -33,7 +33,7 @@ class _RecipeListItemState extends State<RecipeListItem> {
             pageBuilder: (BuildContext context, Animation<double> animation,
                 Animation<double> secondaryAnimation) {
               return RecipePage(
-                widget.menuItem,
+                widget.recipe,
                 initialImageRotationAngle: recipeImageRotationAngle,
               );
             },
@@ -62,16 +62,16 @@ class _RecipeListItemState extends State<RecipeListItem> {
           children: [
             Positioned.fill(
               child: Hero(
-                tag: '__recipe_${widget.menuItem.id}_image_bg__',
+                tag: '__recipe_${widget.recipe.id}_image_bg__',
                 child: Container(
                   alignment: Alignment.bottomRight,
                   decoration: BoxDecoration(
-                    color: widget.menuItem.bgColor,
+                    color: widget.recipe.bgColor,
                     borderRadius: BorderRadius.circular(35),
                     boxShadow: [
                       BoxShadow(
                         color: AppColors.orangeDark.withOpacity(
-                          AppColors.getBrightness(widget.menuItem.bgColor) ==
+                          AppColors.getBrightness(widget.recipe.bgColor) ==
                                   Brightness.dark
                               ? 0.5
                               : 0.2,
@@ -81,7 +81,7 @@ class _RecipeListItemState extends State<RecipeListItem> {
                       ),
                     ],
                   ),
-                  // child: RecipeListItemImage(menuItem),
+                  // child: RecipeListItemImage(recipe),
                 ),
               ),
             ),
@@ -89,7 +89,7 @@ class _RecipeListItemState extends State<RecipeListItem> {
               child: Container(
                 alignment: Alignment.bottomRight,
                 child: RecipeListItemImage(
-                  widget.menuItem,
+                  widget.recipe,
                   imageRotationAngle: recipeImageRotationAngle,
                 ),
               ),
@@ -98,7 +98,7 @@ class _RecipeListItemState extends State<RecipeListItem> {
               children: [
                 Expanded(
                   flex: 3,
-                  child: RecipeListItemText(widget.menuItem),
+                  child: RecipeListItemText(widget.recipe),
                 ),
                 Expanded(flex: 2, child: Container()),
               ],

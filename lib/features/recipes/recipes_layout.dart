@@ -40,7 +40,7 @@ class RecipesLayout {
     }
   }
 
-  double get menuItemImageSize {
+  double get recipeImageSize {
     double screenWidth = MediaQuery.of(context).size.width;
     return screenWidth * 0.45 / gridCrossAxisCount;
   }

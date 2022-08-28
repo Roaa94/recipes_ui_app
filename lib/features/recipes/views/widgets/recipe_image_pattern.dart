@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_vikings/core/styles/app_colors.dart';
 import 'package:flutter_vikings/features/ingredients/views/widgets/gyroscope_or_pointer_effect.dart';
 import 'package:flutter_vikings/features/recipes/models/recipe.dart';
 
@@ -26,7 +27,7 @@ class RecipeImagePattern extends StatelessWidget {
               imageFilter: ImageFilter.blur(sigmaY: 3, sigmaX: 3),
               child: Image.asset(
                 recipe.bgImage,
-                color: Colors.black.withOpacity(0.3),
+                color: AppColors.orangeDark.withOpacity(0.5),
                 alignment: Alignment.bottomCenter,
               ),
             ),
