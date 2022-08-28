@@ -20,6 +20,7 @@ class RecipePageImage extends StatelessWidget {
         child: Center(
           child: Hero(
             tag: '__recipe_${recipe.id}_image__',
+            // Todo: MAYBE add a TweenAnimationBuilder for smoother animation??
             child: Transform.rotate(
               angle: imageRotationAngle,
               child: Image.asset(
