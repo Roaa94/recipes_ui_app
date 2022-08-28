@@ -18,9 +18,11 @@ class RecipeImagePattern extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      clipBehavior: Clip.none,
       children: [
         GyroscopeOrPointerEffect(
           offsetMultiplier: 1.5,
+          maxMovableDistance: 12,
           child: ClipRRect(
             borderRadius: borderRadius,
             child: ImageFiltered(

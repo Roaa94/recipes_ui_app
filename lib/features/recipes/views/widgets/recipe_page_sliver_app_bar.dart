@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_vikings/core/styles/app_colors.dart';
 import 'package:flutter_vikings/core/widgets/app_bar_leading.dart';
+import 'package:flutter_vikings/core/widgets/delayed_fade_in_effect.dart';
 import 'package:flutter_vikings/features/recipes/models/recipe.dart';
-import 'package:flutter_vikings/features/recipes/views/widgets/recipe_page_image.dart';
+import 'package:flutter_vikings/features/recipes/views/widgets/recipe_image.dart';
 import 'package:flutter_vikings/features/recipes/views/widgets/recipe_page_image_bg.dart';
+
+import 'recipe_image_pattern.dart';
 
 class RecipePageSliderAppBar extends StatelessWidget {
   const RecipePageSliderAppBar({
@@ -22,6 +25,8 @@ class RecipePageSliderAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double imageSize = MediaQuery.of(context).size.width * 0.7;
+
     return SliverAppBar(
       pinned: true,
       stretch: true,
@@ -46,9 +51,31 @@ class RecipePageSliderAppBar extends StatelessWidget {
               bottomLeft: Radius.circular(35),
             ),
           ),
-          RecipePageImage(
-            recipe,
-            imageRotationAngle: imageRotationAngle,
+          if (recipe.bgImage.isNotEmpty)
+            FlexibleSpaceBar(
+              background: DelayedFadeInEffect(
+                child: Opacity(
+                  opacity: 0.6,
+                  child: RecipeImagePattern(
+                    recipe,
+                    borderRadius: const BorderRadius.only(
+                      bottomRight: Radius.circular(35),
+                      bottomLeft: Radius.circular(35),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          SafeArea(
+            bottom: false,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: RecipeImage(
+                recipe,
+                imageRotationAngle: imageRotationAngle,
+                imageSize: imageSize,
+              ),
+            ),
           ),
         ],
       ),
