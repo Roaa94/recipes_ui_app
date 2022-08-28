@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_vikings/core/styles/app_colors.dart';
-import 'package:flutter_vikings/features/ingredients/views/widgets/gyroscope_or_pointer_effect.dart';
+import 'package:flutter_vikings/core/widgets/gyroscope_or_pointer_effect.dart';
 import 'package:flutter_vikings/features/recipes/models/recipe.dart';
 
 class RecipeImagePattern extends StatelessWidget {
