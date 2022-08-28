@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_vikings/core/enums/screen_size.dart';
 import 'package:flutter_vikings/core/styles/app_colors.dart';
-import 'package:flutter_vikings/core/widgets/delayed_fade_in_effect.dart';
+import 'package:flutter_vikings/core/widgets/fade_in_effect.dart';
 import 'package:flutter_vikings/features/ingredients/views/widgets/ingredients_section.dart';
 import 'package:flutter_vikings/features/recipes/models/recipe.dart';
 import 'package:flutter_vikings/features/recipes/views/widgets/recipe_page_sidebar.dart';
@@ -80,6 +80,7 @@ class _RecipePageState extends State<RecipePage> {
             flex: 1,
             child: CustomScrollView(
               controller: scrollController,
+              cacheExtent: 0,
               slivers: [
                 if (!ScreenSize.of(context).isLarge)
                   ValueListenableBuilder(
@@ -114,7 +115,7 @@ class _RecipePageState extends State<RecipePage> {
                         ),
                       ),
                       const SizedBox(height: 20),
-                      DelayedFadeInEffect(
+                      FadeInEffect(
                         child: Text(
                           'INGREDIENTS',
                           style: Theme.of(context).textTheme.headline5,

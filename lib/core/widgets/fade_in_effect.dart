@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 
-class DelayedFadeInEffect extends StatefulWidget {
-  const DelayedFadeInEffect({
+class FadeInEffect extends StatefulWidget {
+  const FadeInEffect({
     Key? key,
     required this.child,
+    this.intervalStart = 0.5,
   }) : super(key: key);
 
   final Widget child;
+  final double intervalStart;
 
   @override
-  State<DelayedFadeInEffect> createState() => _DelayedFadeInEffectState();
+  State<FadeInEffect> createState() => _FadeInEffectState();
 }
 
-class _DelayedFadeInEffectState extends State<DelayedFadeInEffect>
+class _FadeInEffectState extends State<FadeInEffect>
     with SingleTickerProviderStateMixin {
   late final AnimationController animationController;
   late final Animation<double> opacityAnimation;
@@ -28,7 +30,7 @@ class _DelayedFadeInEffectState extends State<DelayedFadeInEffect>
     opacityAnimation = Tween<double>(begin: 0, end: 1).animate(
       CurvedAnimation(
         parent: animationController,
-        curve: const Interval(0.5, 1, curve: Curves.easeOut),
+        curve: Interval(widget.intervalStart, 1, curve: Curves.easeOut),
       ),
     );
   }

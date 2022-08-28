@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vikings/core/widgets/app_bar_leading.dart';
-import 'package:flutter_vikings/core/widgets/delayed_fade_in_effect.dart';
+import 'package:flutter_vikings/core/widgets/fade_in_effect.dart';
 import 'package:flutter_vikings/core/widgets/mouse_region_effect.dart';
 import 'package:flutter_vikings/features/recipes/models/recipe.dart';
 import 'package:flutter_vikings/features/recipes/views/widgets/recipe_image.dart';
@@ -34,7 +34,7 @@ class RecipePageSidebar extends StatelessWidget {
             ),
           ),
           if (recipe.bgImageName.isNotEmpty)
-            DelayedFadeInEffect(
+            FadeInEffect(
               child: RecipeImagePatternMouse(
                 recipe,
                 offset: offset,
