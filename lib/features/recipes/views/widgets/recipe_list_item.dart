@@ -98,6 +98,7 @@ class _RecipeListItemState extends State<RecipeListItem> {
                     imageRotationAngle: recipeImageRotationAngle,
                     imageSize: imageSize,
                     alignment: Alignment.bottomRight,
+                    hasShadow: false,
                   ),
                 ),
               ),

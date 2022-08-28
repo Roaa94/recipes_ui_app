@@ -74,7 +74,6 @@ class RecipePageSliderAppBar extends StatelessWidget {
                 recipe,
                 imageRotationAngle: imageRotationAngle,
                 imageSize: imageSize,
-                isShadowMovable: true,
               ),
             ),
           ),

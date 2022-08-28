@@ -9,14 +9,14 @@ class RecipeImage extends StatelessWidget {
     this.imageRotationAngle = 0,
     this.imageSize,
     this.alignment = Alignment.center,
-    this.isShadowMovable = false,
+    this.hasShadow = true,
   }) : super(key: key);
 
   final Recipe recipe;
   final double imageRotationAngle;
   final double? imageSize;
   final AlignmentGeometry alignment;
-  final bool isShadowMovable;
+  final bool hasShadow;
 
   @override
   Widget build(BuildContext context) {
@@ -31,20 +31,21 @@ class RecipeImage extends StatelessWidget {
           child: Stack(
             clipBehavior: Clip.none,
             children: [
-              Container(
-                clipBehavior: Clip.none,
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                  shape: BoxShape.circle,
-                  boxShadow: [
-                    BoxShadow(
-                      color: AppColors.orangeDark.withOpacity(0.5),
-                      blurRadius: 10,
-                      offset: const Offset(0, 0),
-                    ),
-                  ],
+              if (hasShadow)
+                Container(
+                  clipBehavior: Clip.none,
+                  decoration: BoxDecoration(
+                    color: Colors.transparent,
+                    shape: BoxShape.circle,
+                    boxShadow: [
+                      BoxShadow(
+                        color: AppColors.orangeDark.withOpacity(0.5),
+                        blurRadius: 10,
+                        offset: const Offset(0, 0),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
               Positioned.fill(
                 child: Transform.rotate(
                   angle: imageRotationAngle,
