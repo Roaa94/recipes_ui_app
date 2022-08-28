@@ -10,6 +10,7 @@ class RecipeImage extends StatelessWidget {
     this.imageSize,
     this.alignment = Alignment.center,
     this.hasShadow = true,
+    this.shadowOffset,
   }) : super(key: key);
 
   final Recipe recipe;
@@ -17,6 +18,7 @@ class RecipeImage extends StatelessWidget {
   final double? imageSize;
   final AlignmentGeometry alignment;
   final bool hasShadow;
+  final Offset? shadowOffset;
 
   @override
   Widget build(BuildContext context) {
@@ -31,21 +33,7 @@ class RecipeImage extends StatelessWidget {
           child: Stack(
             clipBehavior: Clip.none,
             children: [
-              if (hasShadow)
-                Container(
-                  clipBehavior: Clip.none,
-                  decoration: BoxDecoration(
-                    color: Colors.transparent,
-                    shape: BoxShape.circle,
-                    boxShadow: [
-                      BoxShadow(
-                        color: AppColors.orangeDark.withOpacity(0.5),
-                        blurRadius: 10,
-                        offset: const Offset(0, 0),
-                      ),
-                    ],
-                  ),
-                ),
+              if (hasShadow) _buildShadow(),
               Positioned.fill(
                 child: Transform.rotate(
                   angle: imageRotationAngle,
@@ -60,5 +48,36 @@ class RecipeImage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Widget _buildShadow() {
+    Widget child = Container(
+      clipBehavior: Clip.none,
+      decoration: BoxDecoration(
+        color: Colors.transparent,
+        shape: BoxShape.circle,
+        boxShadow: [
+          BoxShadow(
+            color: AppColors.orangeDark.withOpacity(0.5),
+            blurRadius: 10,
+          ),
+        ],
+      ),
+    );
+
+    if (shadowOffset != null) {
+      child = TweenAnimationBuilder(
+        tween: Tween<Offset>(begin: Offset.zero, end: shadowOffset),
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeOutBack,
+        builder: (context, Offset offset, child) => Transform.translate(
+          offset: offset,
+          child: child,
+        ),
+        child: child,
+      );
+    }
+
+    return child;
   }
 }
