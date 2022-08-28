@@ -46,6 +46,7 @@ class _RecipeListItemGestureDetectorState
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
+      cursor: SystemMouseCursors.click,
       onEnter: (_) => animationController.animateTo(
         0.5,
         duration: const Duration(milliseconds: 300),
