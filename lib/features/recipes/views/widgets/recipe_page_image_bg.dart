@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vikings/core/styles/app_colors.dart';
 import 'package:flutter_vikings/features/recipes/models/recipe.dart';
-import 'package:flutter_vikings/features/recipes/views/widgets/recipe_image_pattern.dart';
+import 'package:flutter_vikings/features/recipes/views/widgets/recipe_image_pattern_mobile.dart';
 
 class RecipePageImageBg extends StatelessWidget {
   const RecipePageImageBg(
@@ -40,7 +40,7 @@ class RecipePageImageBg extends StatelessWidget {
           ),
         ),
         if (recipe.bgImage.isNotEmpty)
-          RecipeImagePattern(
+          RecipeImagePatternMobile(
             recipe,
             borderRadius: borderRadius,
           ),

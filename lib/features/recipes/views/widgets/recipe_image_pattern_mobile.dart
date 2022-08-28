@@ -4,8 +4,8 @@ import 'package:flutter_vikings/features/recipes/models/recipe.dart';
 import 'package:flutter_vikings/features/recipes/providers/gyroscope_provider.dart';
 import 'package:sensors_plus/sensors_plus.dart';
 
-class RecipeImagePattern extends StatefulWidget {
-  const RecipeImagePattern(
+class RecipeImagePatternMobile extends StatefulWidget {
+  const RecipeImagePatternMobile(
     this.recipe, {
     Key? key,
     required this.borderRadius,
@@ -15,10 +15,10 @@ class RecipeImagePattern extends StatefulWidget {
   final BorderRadius borderRadius;
 
   @override
-  State<RecipeImagePattern> createState() => _RecipeImagePatternState();
+  State<RecipeImagePatternMobile> createState() => _RecipeImagePatternMobileState();
 }
 
-class _RecipeImagePatternState extends State<RecipeImagePattern> {
+class _RecipeImagePatternMobileState extends State<RecipeImagePatternMobile> {
   double x = 0;
   double y = 0;
 
