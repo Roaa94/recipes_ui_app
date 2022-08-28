@@ -7,7 +7,7 @@ class Recipe {
   final List<String> ingredients;
   final List<String> instructions;
   final String image;
-  final String bgImage;
+  final String bgImageName;
   final Color bgColor;
 
   const Recipe({
@@ -17,7 +17,11 @@ class Recipe {
     required this.ingredients,
     required this.instructions,
     required this.image,
-    required this.bgImage,
+    required this.bgImageName,
     required this.bgColor,
   });
+
+  String get bgImage => 'assets/images/desserts/$bgImageName.png';
+
+  String get bgImageLg => 'assets/images/desserts/$bgImageName-lg.png';
 }
