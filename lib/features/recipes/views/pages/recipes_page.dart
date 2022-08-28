@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_vikings/core/enums/screen_size.dart';
 import 'package:flutter_vikings/features/recipes/recipes_data.dart';
 import 'package:flutter_vikings/features/recipes/recipes_layout.dart';
 import 'package:flutter_vikings/features/recipes/views/widgets/recipe_list_item.dart';
@@ -44,16 +45,14 @@ class _RecipesPageState extends State<RecipesPage> {
         },
         child: GridView.builder(
           padding: EdgeInsets.only(
-            left: 17,
-            right: 17,
+            left: ScreenSize.of(context).isLarge ? 5 : 3.5,
+            right: ScreenSize.of(context).isLarge ? 5 : 3.5,
             top: 10,
             bottom: MediaQuery.of(context).padding.bottom + 20,
           ),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: RecipesLayout.of(context).gridCrossAxisCount,
             childAspectRatio: RecipesLayout.of(context).gridChildAspectRatio,
-            mainAxisSpacing: 25,
-            crossAxisSpacing: 25,
           ),
           itemCount: RecipesData.dessertMenu.length,
           cacheExtent: 0,

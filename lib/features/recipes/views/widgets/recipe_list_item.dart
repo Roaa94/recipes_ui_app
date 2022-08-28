@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_vikings/core/enums/screen_size.dart';
 import 'package:flutter_vikings/core/styles/app_colors.dart';
 import 'package:flutter_vikings/features/recipes/models/recipe.dart';
 import 'package:flutter_vikings/features/recipes/views/pages/recipe_page.dart';
@@ -55,9 +56,8 @@ class _RecipeListItemState extends State<RecipeListItem> {
           }
         });
       },
-      child: SizedBox(
-        width: double.infinity,
-        height: 170,
+      child: Padding(
+        padding: EdgeInsets.all(ScreenSize.of(context).isLarge ? 15 : 12.5),
         child: Stack(
           children: [
             Positioned.fill(

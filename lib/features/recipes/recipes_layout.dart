@@ -28,7 +28,7 @@ class RecipesLayout {
     switch (ScreenSize.of(context)) {
       case ScreenSize.xs:
       case ScreenSize.sm:
-        return 2;
+        return 1.5;
       case ScreenSize.md:
         return 2;
       case ScreenSize.lg:
