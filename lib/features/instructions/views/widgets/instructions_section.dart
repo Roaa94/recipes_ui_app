@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vikings/core/widgets/animate_in_effect.dart';
-import 'package:flutter_vikings/features/ingredients/views/widgets/ingredient_item.dart';
+import 'package:flutter_vikings/features/instructions/views/widgets/instruction_item.dart';
 import 'package:flutter_vikings/features/recipes/models/recipe.dart';
 
-class IngredientsSection extends StatelessWidget {
-  const IngredientsSection(
+class InstructionsSection extends StatelessWidget {
+  const InstructionsSection(
     this.recipe, {
     Key? key,
   }) : super(key: key);
@@ -16,15 +16,15 @@ class IngredientsSection extends StatelessWidget {
     return ListView.builder(
       padding: const EdgeInsets.symmetric(vertical: 20),
       physics: const NeverScrollableScrollPhysics(),
-      itemCount: recipe.ingredients.length,
+      itemCount: recipe.instructions.length,
       shrinkWrap: true,
       itemBuilder: (context, i) {
         return AnimateInEffect(
           keepAlive: true,
-          intervalStart: i / recipe.ingredients.length,
-          child: IngredientItem(
+          intervalStart: i / recipe.instructions.length,
+          child: InstructionItem(
             recipe,
-            ingredient: recipe.ingredients[i],
+            index: i,
           ),
         );
       },
