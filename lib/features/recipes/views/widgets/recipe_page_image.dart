@@ -13,24 +13,35 @@ class RecipePageImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      bottom: false,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 20),
-        child: Center(
-          child: Hero(
-            tag: '__recipe_${recipe.id}_image__',
-            // Todo: MAYBE add a TweenAnimationBuilder for smoother animation??
-            child: Transform.rotate(
-              angle: imageRotationAngle,
-              child: Image.asset(
-                recipe.image,
-                width: MediaQuery.of(context).size.width * 0.75,
+    return Stack(
+      children: [
+        // Positioned.fill(
+        //   child: Container(
+        //     decoration: BoxDecoration(
+        //
+        //     ),
+        //   ),
+        // ),
+        SafeArea(
+          bottom: false,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20),
+            child: Center(
+              child: Hero(
+                tag: '__recipe_${recipe.id}_image__',
+                // Todo: MAYBE add a TweenAnimationBuilder for smoother animation??
+                child: Transform.rotate(
+                  angle: imageRotationAngle,
+                  child: Image.asset(
+                    recipe.image,
+                    width: MediaQuery.of(context).size.width * 0.75,
+                  ),
+                ),
               ),
             ),
           ),
         ),
-      ),
+      ],
     );
   }
 }

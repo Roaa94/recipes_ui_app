@@ -20,9 +20,9 @@ class RecipePageSidebar extends StatelessWidget {
       children: [
         RecipePageImageBg(
           recipe,
-          borderRadius: const BorderRadiusDirectional.only(
-            bottomEnd: Radius.circular(35),
-            topEnd: Radius.circular(35),
+          borderRadius: const BorderRadius.only(
+            bottomRight: Radius.circular(35),
+            topRight: Radius.circular(35),
           ),
         ),
         Center(

@@ -59,7 +59,7 @@ class RecipesData {
         'Place in an airtight container for 24 hours to “bloom”.',
       ],
       image: 'assets/images/desserts/05-macaroons.png',
-      bgImage: 'assets/images/desserts/05-macaroons-bg.png',
+      bgImage: '',
       bgColor: AppColors.primary,
     ),
     Recipe(
@@ -74,7 +74,7 @@ class RecipesData {
         '',
       ],
       image: 'assets/images/desserts/08-cream-cupcakes.png',
-      bgImage: 'assets/images/desserts/08-cream-cupcakes-bg.png',
+      bgImage: '',
       bgColor: AppColors.pinkLight,
     ),
     Recipe(
@@ -98,7 +98,7 @@ class RecipesData {
         'Spoon the cheesecake mixture over the biscuit base, levelling it out with the back of a spoon. Transfer to the freezer and freeze for 2 hrs, or until set. Remove from the tin and leave at room temperature to soften for about 20 mins before serving.',
       ],
       image: 'assets/images/desserts/02-chocolate-cake-1.png',
-      bgImage: 'assets/images/desserts/02-chocolate-cake-1-bg.png',
+      bgImage: '',
       bgColor: AppColors.orangeDark,
     ),
     Recipe(
@@ -113,7 +113,7 @@ class RecipesData {
         '',
       ],
       image: 'assets/images/desserts/09-fruit-plate.png',
-      bgImage: 'assets/images/desserts/09-fruit-plate-bg.png',
+      bgImage: '',
       bgColor: AppColors.green,
     ),
     Recipe(
@@ -144,7 +144,7 @@ class RecipesData {
         'Donuts are best eaten the same day or keep them for up to 3 days in the refrigerator.',
       ],
       image: 'assets/images/desserts/03-chocolate-donuts.png',
-      bgImage: 'assets/images/desserts/03-chocolate-donuts-bg.png',
+      bgImage: '',
       bgColor: AppColors.sugar,
     ),
     Recipe(
@@ -159,7 +159,7 @@ class RecipesData {
         '',
       ],
       image: 'assets/images/desserts/13-strawberry-powdered-cake.png',
-      bgImage: 'assets/images/desserts/13-strawberry-powdered-cake-bg.png',
+      bgImage: '',
       bgColor: AppColors.red,
     ),
     Recipe(
@@ -190,7 +190,7 @@ class RecipesData {
         'Frost with your choice of frosting and enjoy.',
       ],
       image: 'assets/images/desserts/04-fluffy-cake.png',
-      bgImage: 'assets/images/desserts/04-fluffy-cake-bg.png',
+      bgImage: '',
       bgColor: AppColors.orangeDark,
     ),
     Recipe(
@@ -225,7 +225,7 @@ class RecipesData {
         'In large bowl, cream 1 cup butter, 1 cup sugar and 1 teaspoon vanilla; beat until light and fluffy. Gradually add cooled white chocolate mixture. Beat at high speed until it is the consistency of whipped cream. Spread between layers, on top and sides of cake.',
       ],
       image: 'assets/images/desserts/06-white-cream-cake.png',
-      bgImage: 'assets/images/desserts/06-white-cream-cake-bg.png',
+      bgImage: '',
       bgColor: AppColors.sugar,
     ),
     Recipe(
@@ -240,7 +240,7 @@ class RecipesData {
         '',
       ],
       image: 'assets/images/desserts/14-fruit-pie.png',
-      bgImage: 'assets/images/desserts/14-fruit-pie-bg.png',
+      bgImage: '',
       bgColor: AppColors.yellow,
     ),
     Recipe(
@@ -276,7 +276,7 @@ class RecipesData {
         'Cover with plastic wrap and refrigerate for at least 8 hours to overnight. Transfer to a cake stand using 2 spatulas. Cut and serve.',
       ],
       image: 'assets/images/desserts/07-honey-cake.png',
-      bgImage: 'assets/images/desserts/07-honey-cake-bg.png',
+      bgImage: '',
       bgColor: AppColors.honey,
     ),
     Recipe(
@@ -291,7 +291,7 @@ class RecipesData {
         '',
       ],
       image: 'assets/images/desserts/11-powdered-cake.png',
-      bgImage: 'assets/images/desserts/11-powdered-cake-bg.png',
+      bgImage: '',
       bgColor: AppColors.sugar,
     ),
     Recipe(
@@ -306,7 +306,7 @@ class RecipesData {
         '',
       ],
       image: 'assets/images/desserts/10-strawberries.png',
-      bgImage: 'assets/images/desserts/10-strawberries-bg.png',
+      bgImage: '',
       bgColor: AppColors.red,
     ),
     Recipe(
@@ -321,7 +321,7 @@ class RecipesData {
         '',
       ],
       image: 'assets/images/desserts/12-chocolate-cake-2.png',
-      bgImage: 'assets/images/desserts/12-chocolate-cake-2-bg.png',
+      bgImage: '',
       bgColor: AppColors.orangeDark,
     ),
     Recipe(
@@ -336,7 +336,7 @@ class RecipesData {
         '',
       ],
       image: 'assets/images/desserts/15-apple-pie.png',
-      bgImage: 'assets/images/desserts/15-apple-pie-bg.png',
+      bgImage: '',
       bgColor: AppColors.sugar,
     ),
   ];
