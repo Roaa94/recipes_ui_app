@@ -80,53 +80,56 @@ class _RecipeImagePatternMouseState extends State<RecipeImagePatternMouse> {
           offset = offsetFromMousePosition(event.localPosition);
         });
       },
-      child: Stack(
-        clipBehavior: Clip.none,
-        children: [
-          TweenAnimationBuilder(
-            tween: Tween<Offset>(begin: Offset.zero, end: offset * 2),
-            duration: const Duration(milliseconds: 400),
-            curve: Curves.easeOutBack,
-            builder: (context, Offset offset, child) => Transform.translate(
-              offset: offset,
-              child: child,
+      child: Opacity(
+        opacity: 0.6,
+        child: Stack(
+          clipBehavior: Clip.none,
+          children: [
+            TweenAnimationBuilder(
+              tween: Tween<Offset>(begin: Offset.zero, end: offset * 2),
+              duration: const Duration(milliseconds: 500),
+              curve: Curves.easeOutBack,
+              builder: (context, Offset offset, child) => Transform.translate(
+                offset: offset,
+                child: child,
+              ),
+              child: Align(
+                alignment: alignment,
+                child: ClipRRect(
+                  borderRadius: widget.borderRadius,
+                  child: ImageFiltered(
+                    imageFilter: ImageFilter.blur(sigmaY: 3, sigmaX: 3),
+                    child: Image.asset(
+                      bgImage,
+                      color: AppColors.orangeDark.withOpacity(0.5),
+                      alignment: alignment,
+                    ),
+                  ),
+                ),
+              ),
             ),
-            child: Align(
-              alignment: alignment,
+            TweenAnimationBuilder(
+              tween: Tween<Offset>(begin: Offset.zero, end: offset),
+              duration: const Duration(milliseconds: 500),
+              curve: Curves.easeOutBack,
+              builder: (context, Offset offset, child) => Transform.translate(
+                offset: offset,
+                child: child,
+              ),
               child: ClipRRect(
                 borderRadius: widget.borderRadius,
-                child: ImageFiltered(
-                  imageFilter: ImageFilter.blur(sigmaY: 3, sigmaX: 3),
-                  child: Image.asset(
-                    bgImage,
-                    color: AppColors.orangeDark.withOpacity(0.5),
-                    alignment: alignment,
+                child: Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(bgImage),
+                      alignment: alignment,
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-          TweenAnimationBuilder(
-            tween: Tween<Offset>(begin: Offset.zero, end: offset),
-            duration: const Duration(milliseconds: 400),
-            curve: Curves.easeOutBack,
-            builder: (context, Offset offset, child) => Transform.translate(
-              offset: offset,
-              child: child,
-            ),
-            child: ClipRRect(
-              borderRadius: widget.borderRadius,
-              child: Container(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(bgImage),
-                    alignment: alignment,
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
