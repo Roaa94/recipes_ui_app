@@ -1,22 +1,20 @@
 import 'package:flutter/material.dart';
 
-class IngredientItemWrapper extends StatefulWidget {
-  const IngredientItemWrapper({
+class AnimateInEffect extends StatefulWidget {
+  const AnimateInEffect({
     Key? key,
     required this.child,
-    this.index = 0,
-    this.totalCount = 1,
+    this.intervalStart = 0,
   }) : super(key: key);
 
   final Widget child;
-  final int index;
-  final int totalCount;
+  final double intervalStart;
 
   @override
-  State<IngredientItemWrapper> createState() => _IngredientItemWrapperState();
+  State<AnimateInEffect> createState() => _AnimateInEffectState();
 }
 
-class _IngredientItemWrapperState extends State<IngredientItemWrapper>
+class _AnimateInEffectState extends State<AnimateInEffect>
     with SingleTickerProviderStateMixin {
   late final AnimationController animationController;
   late final Animation<Offset> offsetAnimation;
@@ -35,9 +33,8 @@ class _IngredientItemWrapperState extends State<IngredientItemWrapper>
       () => animationController.forward(),
     );
 
-    double intervalStartValue = widget.index / widget.totalCount;
     Curve intervalCurve = Interval(
-      intervalStartValue,
+      widget.intervalStart,
       1,
       curve: Curves.easeOut,
     );

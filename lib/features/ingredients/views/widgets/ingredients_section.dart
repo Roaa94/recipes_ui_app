@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_vikings/core/widgets/animate_in_effect.dart';
 import 'package:flutter_vikings/features/ingredients/views/widgets/ingredient_item.dart';
-import 'package:flutter_vikings/features/ingredients/views/widgets/ingredient_item_wrapper.dart';
 import 'package:flutter_vikings/features/recipes/models/recipe.dart';
 
 class IngredientsSection extends StatelessWidget {
@@ -19,9 +19,8 @@ class IngredientsSection extends StatelessWidget {
       itemCount: recipe.ingredients.length,
       shrinkWrap: true,
       itemBuilder: (context, i) {
-        return IngredientItemWrapper(
-          index: i,
-          totalCount: recipe.ingredients.length,
+        return AnimateInEffect(
+          intervalStart: i / recipe.ingredients.length,
           child: IngredientItem(
             recipe,
             ingredient: recipe.ingredients[i],
