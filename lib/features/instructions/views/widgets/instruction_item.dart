@@ -17,8 +17,8 @@ class InstructionItem extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(bottom: 20),
       decoration: BoxDecoration(
-        color: recipe.bgColor.withOpacity(0.2),
         borderRadius: BorderRadius.circular(35),
+        border: Border.all(color: recipe.bgColor, width: 2),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,9 +44,12 @@ class InstructionItem extends StatelessWidget {
                 ],
               ),
               alignment: Alignment.center,
-              child: Text(
-                '${index + 1}',
-                style: Theme.of(context).textTheme.headline3,
+              child: Transform.rotate(
+                angle: -0.3,
+                child: Text(
+                  '${index + 1}',
+                  style: Theme.of(context).textTheme.headline3,
+                ),
               ),
             ),
           ),
@@ -55,8 +58,10 @@ class InstructionItem extends StatelessWidget {
               padding: const EdgeInsets.all(20),
               child: Text(
                 recipe.instructions[index],
-                style:
-                    Theme.of(context).textTheme.bodyText1!.copyWith(height: 1.7),
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyText1!
+                    .copyWith(height: 1.7),
               ),
             ),
           ),
