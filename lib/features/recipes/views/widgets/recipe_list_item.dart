@@ -53,7 +53,7 @@ class _RecipeListItemState extends State<RecipeListItem> {
           ),
         )
             .then((response) {
-          if (response != null && response is double) {
+          if (response != null && response is double && mounted) {
             setState(() {
               recipeImageRotationAngle = response;
             });
