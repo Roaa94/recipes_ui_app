@@ -156,6 +156,7 @@ class _RecipePageState extends State<RecipePage> {
                       const SizedBox(height: 20),
                       FadeInEffect(
                         intervalStart: 0.5,
+                        keepAlive: true,
                         child: Text(
                           'INGREDIENTS',
                           style: Theme.of(context).textTheme.headline5,
@@ -163,6 +164,7 @@ class _RecipePageState extends State<RecipePage> {
                       ),
                       IngredientsSection(widget.recipe),
                       FadeInEffect(
+                        keepAlive: true,
                         child: Text(
                           'STEPS',
                           style: Theme.of(context).textTheme.headline5,
