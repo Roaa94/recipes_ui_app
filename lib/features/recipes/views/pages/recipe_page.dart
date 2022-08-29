@@ -47,6 +47,22 @@ class _RecipePageState extends State<RecipePage> {
     scrollController.addListener(scrollListener);
     imageRotationAngleNotifier =
         ValueNotifier<double>(widget.initialImageRotationAngle);
+    // Future.delayed(
+    //   const Duration(milliseconds: 1000),
+    //   () => scrollController.animateTo(
+    //     800,
+    //     duration: const Duration(milliseconds: 1000),
+    //     curve: Curves.easeInOut,
+    //   ),
+    // );
+    // Future.delayed(
+    //   const Duration(milliseconds: 2500),
+    //   () => scrollController.animateTo(
+    //     0,
+    //     duration: const Duration(milliseconds: 1000),
+    //     curve: Curves.easeInOut,
+    //   ),
+    // );
     super.initState();
   }
 
