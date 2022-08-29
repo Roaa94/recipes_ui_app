@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_vikings/playground/animated_scroll_view/animated_scroll_view_item.dart';
-import 'package:flutter_vikings/playground/animated_scroll_view/list_item.dart';
+import 'package:recipes_ui/playground/animated_scroll_view/animated_scroll_view_item.dart';
+import 'package:recipes_ui/playground/animated_scroll_view/list_item.dart';
 
 class AnimatedHorizontalListView extends StatelessWidget {
   const AnimatedHorizontalListView({Key? key}) : super(key: key);

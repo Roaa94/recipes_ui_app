@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_vikings/core/styles/app_colors.dart';
-import 'package:flutter_vikings/core/styles/app_text_styles.dart';
+import 'package:recipes_ui/core/styles/app_colors.dart';
+import 'package:recipes_ui/core/styles/app_text_styles.dart';
 
 class AppThemes {
   static ThemeData main({bool isDark = false}) {

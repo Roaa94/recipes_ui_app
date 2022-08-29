@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_vikings/playground/interactive_grid/interactive_grid_3.dart';
+import 'package:recipes_ui/playground/interactive_grid/interactive_grid_3.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);

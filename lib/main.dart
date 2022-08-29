@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_vikings/core/styles/app_themes.dart';
-import 'package:flutter_vikings/features/recipes/recipes_data.dart';
-import 'package:flutter_vikings/features/recipes/models/recipe.dart';
-import 'package:flutter_vikings/features/recipes/views/pages/recipes_page.dart';
+import 'package:recipes_ui/core/styles/app_themes.dart';
+import 'package:recipes_ui/features/recipes/recipes_data.dart';
+import 'package:recipes_ui/features/recipes/models/recipe.dart';
+import 'package:recipes_ui/features/recipes/views/pages/recipes_page.dart';
 
 void main() {
   runApp(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_vikings/core/enums/screen_size.dart';
+import 'package:recipes_ui/core/enums/screen_size.dart';
 
 class RecipesLayout {
   final BuildContext context;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_vikings/core/widgets/animate_in_effect.dart';
-import 'package:flutter_vikings/features/ingredients/views/widgets/ingredient_item.dart';
-import 'package:flutter_vikings/features/recipes/models/recipe.dart';
+import 'package:recipes_ui/core/widgets/animate_in_effect.dart';
+import 'package:recipes_ui/features/ingredients/views/widgets/ingredient_item.dart';
+import 'package:recipes_ui/features/recipes/models/recipe.dart';
 
 class IngredientsSection extends StatelessWidget {
   const IngredientsSection(

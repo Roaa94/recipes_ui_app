@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_vikings/features/recipes/providers/gyroscope_provider.dart';
+import 'package:recipes_ui/features/recipes/providers/gyroscope_provider.dart';
 import 'package:sensors_plus/sensors_plus.dart';
 
 typedef GyroscopeEffectBuilder = Widget Function(

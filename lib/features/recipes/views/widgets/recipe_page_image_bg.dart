@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_vikings/core/styles/app_colors.dart';
-import 'package:flutter_vikings/features/recipes/models/recipe.dart';
+import 'package:recipes_ui/core/styles/app_colors.dart';
+import 'package:recipes_ui/features/recipes/models/recipe.dart';
 
 class RecipePageImageBg extends StatelessWidget {
   const RecipePageImageBg(

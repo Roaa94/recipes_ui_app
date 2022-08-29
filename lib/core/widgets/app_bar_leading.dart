@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_vikings/core/styles/app_colors.dart';
+import 'package:recipes_ui/core/styles/app_colors.dart';
 
 class AppBarLeading extends StatefulWidget {
   const AppBarLeading({

@@ -2,14 +2,14 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_vikings/core/enums/screen_size.dart';
-import 'package:flutter_vikings/core/styles/app_colors.dart';
-import 'package:flutter_vikings/core/widgets/fade_in_effect.dart';
-import 'package:flutter_vikings/features/ingredients/views/widgets/ingredients_section.dart';
-import 'package:flutter_vikings/features/instructions/views/widgets/instructions_section.dart';
-import 'package:flutter_vikings/features/recipes/models/recipe.dart';
-import 'package:flutter_vikings/features/recipes/views/widgets/recipe_page_sidebar.dart';
-import 'package:flutter_vikings/features/recipes/views/widgets/recipe_page_sliver_app_bar.dart';
+import 'package:recipes_ui/core/enums/screen_size.dart';
+import 'package:recipes_ui/core/styles/app_colors.dart';
+import 'package:recipes_ui/core/widgets/fade_in_effect.dart';
+import 'package:recipes_ui/features/ingredients/views/widgets/ingredients_section.dart';
+import 'package:recipes_ui/features/instructions/views/widgets/instructions_section.dart';
+import 'package:recipes_ui/features/recipes/models/recipe.dart';
+import 'package:recipes_ui/features/recipes/views/widgets/recipe_page_sidebar.dart';
+import 'package:recipes_ui/features/recipes/views/widgets/recipe_page_sliver_app_bar.dart';
 
 class RecipePage extends StatefulWidget {
   const RecipePage(
