@@ -40,7 +40,7 @@ class _MyAppState extends State<MyApp> {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
 
     return MaterialApp(
-      title: 'Flutter Vikings Demo',
+      title: 'Recipes UI Demo',
       debugShowCheckedModeBanner: false,
       theme: AppThemes.main(),
       home: const RecipesPage(),
