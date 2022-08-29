@@ -54,15 +54,37 @@ class _RecipePageState extends State<RecipePage> {
     //     duration: const Duration(milliseconds: 1000),
     //     curve: Curves.easeInOut,
     //   ),
-    // );
-    // Future.delayed(
-    //   const Duration(milliseconds: 2500),
-    //   () => scrollController.animateTo(
-    //     0,
-    //     duration: const Duration(milliseconds: 1000),
-    //     curve: Curves.easeInOut,
-    //   ),
-    // );
+    // ).then((_) {
+    //   scrollDirection = ScrollDirection.forward;
+    //   Future.delayed(
+    //     const Duration(milliseconds: 300),
+    //     () => scrollController.animateTo(
+    //       0,
+    //       duration: const Duration(milliseconds: 1000),
+    //       curve: Curves.easeInOut,
+    //     ),
+    //   ).then((_) {
+    //     scrollDirection = ScrollDirection.reverse;
+    //     Future.delayed(
+    //       const Duration(milliseconds: 200),
+    //       () => scrollController.animateTo(
+    //         400,
+    //         duration: const Duration(milliseconds: 1000),
+    //         curve: Curves.easeInOut,
+    //       ),
+    //     ).then((_) {
+    //       scrollDirection = ScrollDirection.forward;
+    //       Future.delayed(
+    //         const Duration(milliseconds: 200),
+    //         () => scrollController.animateTo(
+    //           0,
+    //           duration: const Duration(milliseconds: 1000),
+    //           curve: Curves.easeInOut,
+    //         ),
+    //       );
+    //     });
+    //   });
+    // });
     super.initState();
   }
 
