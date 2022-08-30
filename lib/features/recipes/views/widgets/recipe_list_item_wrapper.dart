@@ -5,12 +5,12 @@ class RecipeListItemWrapper extends StatefulWidget {
   const RecipeListItemWrapper({
     Key? key,
     required this.child,
-    this.playOnce = false,
+    this.keepAlive = false,
     this.scrollDirection = ScrollDirection.forward,
   }) : super(key: key);
 
   final Widget child;
-  final bool playOnce;
+  final bool keepAlive;
   final ScrollDirection scrollDirection;
 
   @override
@@ -95,5 +95,5 @@ class _RecipeListItemWrapperState extends State<RecipeListItemWrapper>
   }
 
   @override
-  bool get wantKeepAlive => widget.playOnce;
+  bool get wantKeepAlive => widget.keepAlive;
 }
