@@ -5,7 +5,10 @@ import 'package:recipes_ui/features/recipes/providers/gyroscope_provider.dart';
 import 'package:sensors_plus/sensors_plus.dart';
 
 typedef GyroscopeEffectBuilder = Widget Function(
-    BuildContext context, Offset offset, Widget? child);
+  BuildContext context,
+  Offset offset,
+  Widget? child,
+);
 
 class GyroscopeEffect extends StatefulWidget {
   const GyroscopeEffect({
@@ -26,9 +29,20 @@ class GyroscopeEffect extends StatefulWidget {
   })  : assert(childBuilder != null),
         super(key: key);
 
+  //...
+
+  /// Moving child widget
   final Widget? child;
+
+  /// Maximum distance allowed for the child to move in
   final double maxMovableDistance;
+
+  /// Value to multiply the movement offset to allow some widgets
+  /// to move further than the other
   final double offsetMultiplier;
+
+  /// A builder that provides necessary data to build a moving child
+  /// with its child not rebuilding with the stream
   final GyroscopeEffectBuilder? childBuilder;
 
   @override
@@ -52,10 +66,9 @@ class _GyroscopeEffectState extends State<GyroscopeEffect> {
           final GyroscopeEvent? gyroscopeEvent =
               ref.watch(gyroscopeProvider).value;
           if (gyroscopeEvent != null) {
-            y += gyroscopeEvent.y;
-            x += gyroscopeEvent.x;
+            x += gyroscopeEvent.y;
+            y += gyroscopeEvent.x;
           }
-
           x = x.clamp(-widget.maxMovableDistance, widget.maxMovableDistance);
           y = y.clamp(-widget.maxMovableDistance, widget.maxMovableDistance);
 
@@ -65,27 +78,22 @@ class _GyroscopeEffectState extends State<GyroscopeEffect> {
     }
   }
 
-  Widget _buildChild(
-    BuildContext context,
-    double x,
-    double y,
-    Widget? child,
-  ) {
+  Widget _buildChild(BuildContext context, double x, double y, Widget? child) {
     if (widget.childBuilder != null) {
       return widget.childBuilder!.call(
         context,
-        Offset(-y, -x) * widget.offsetMultiplier,
+        Offset(-x, -y) * widget.offsetMultiplier,
         child,
       );
     } else {
       return AnimatedPositioned(
-        top: x * widget.offsetMultiplier,
-        bottom: x * widget.offsetMultiplier,
-        left: -y * widget.offsetMultiplier,
-        right: y * widget.offsetMultiplier,
+        top: y * widget.offsetMultiplier,
+        bottom: y * widget.offsetMultiplier,
+        left: -x * widget.offsetMultiplier,
+        right: x * widget.offsetMultiplier,
         duration: const Duration(milliseconds: 100),
         curve: Curves.easeOut,
-        child: widget.child!,
+        child: child!,
       );
     }
   }
