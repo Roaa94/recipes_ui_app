@@ -52,6 +52,9 @@ class AppColors {
   static Brightness getBrightness(Color color) {
     final double relativeLuminance = color.computeLuminance();
     const double kThreshold = 0.15;
-    return ((relativeLuminance + 0.05) * (relativeLuminance + 0.05) > kThreshold) ? Brightness.light : Brightness.dark;
+    return ((relativeLuminance + 0.05) * (relativeLuminance + 0.05) >
+            kThreshold)
+        ? Brightness.light
+        : Brightness.dark;
   }
 }

@@ -1,14 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:recipes_ui/features/recipes/providers/gyroscope_provider.dart';
 import 'package:sensors_plus/sensors_plus.dart';
 
 typedef GyroscopeEffectBuilder = Widget Function(
-  BuildContext context,
-  Offset offset,
-  Widget? child,
-);
+    BuildContext context, Offset offset, Widget? child);
 
 class GyroscopeEffect extends StatefulWidget {
   const GyroscopeEffect({
@@ -29,18 +24,9 @@ class GyroscopeEffect extends StatefulWidget {
   })  : assert(childBuilder != null),
         super(key: key);
 
-  /// Moving child widget
   final Widget? child;
-
-  /// Maximum distance allowed for the child to move in
   final double maxMovableDistance;
-
-  /// Value to multiply the movement offset to allow some widgets
-  /// to move further than the other
   final double offsetMultiplier;
-
-  /// A builder that provides necessary data to build a moving child
-  /// with its child not rebuilding with the stream
   final GyroscopeEffectBuilder? childBuilder;
 
   @override
@@ -53,34 +39,39 @@ class _GyroscopeEffectState extends State<GyroscopeEffect> {
 
   @override
   Widget build(BuildContext context) {
-    if (defaultTargetPlatform == TargetPlatform.macOS ||
+    if (kIsWeb ||
+        defaultTargetPlatform == TargetPlatform.macOS ||
         defaultTargetPlatform == TargetPlatform.linux) {
-      return _buildChild(context, 0, 0, widget.child);
+      return _buildChild(context, 0, 0);
     } else {
-      return Consumer(
-        child: widget.child,
-        builder: (context, ref, child) {
-          final GyroscopeEvent? gyroscopeEvent =
-              ref.watch(gyroscopeProvider).value;
-          if (gyroscopeEvent != null) {
+      //...
+      return StreamBuilder<GyroscopeEvent>(
+        builder: (context, AsyncSnapshot<GyroscopeEvent> snapshot) {
+          if (snapshot.hasData) {
+            final GyroscopeEvent gyroscopeEvent = snapshot.data!;
             x += gyroscopeEvent.y;
             y += gyroscopeEvent.x;
-          }
-          x = x.clamp(-widget.maxMovableDistance, widget.maxMovableDistance);
-          y = y.clamp(-widget.maxMovableDistance, widget.maxMovableDistance);
 
-          return _buildChild(context, x, y, child);
+            x = x.clamp(-widget.maxMovableDistance, widget.maxMovableDistance);
+            y = y.clamp(-widget.maxMovableDistance, widget.maxMovableDistance);
+          }
+
+          return _buildChild(context, x, y);
         },
       );
     }
   }
 
-  Widget _buildChild(BuildContext context, double x, double y, Widget? child) {
+  Widget _buildChild(
+    BuildContext context,
+    double x,
+    double y,
+  ) {
     if (widget.childBuilder != null) {
       return widget.childBuilder!.call(
         context,
-        Offset(-x, -y) * widget.offsetMultiplier,
-        child,
+        Offset(-y, -x) * widget.offsetMultiplier,
+        widget.child,
       );
     } else {
       return AnimatedPositioned(
@@ -90,7 +81,7 @@ class _GyroscopeEffectState extends State<GyroscopeEffect> {
         right: x * widget.offsetMultiplier,
         duration: const Duration(milliseconds: 100),
         curve: Curves.easeOut,
-        child: child!,
+        child: widget.child!,
       );
     }
   }

@@ -5,17 +5,19 @@ class FadeInEffect extends StatefulWidget {
     Key? key,
     required this.child,
     this.intervalStart = 0,
+    this.keepAlive = false,
   }) : super(key: key);
 
   final Widget child;
   final double intervalStart;
+  final bool keepAlive;
 
   @override
   State<FadeInEffect> createState() => _FadeInEffectState();
 }
 
 class _FadeInEffectState extends State<FadeInEffect>
-    with SingleTickerProviderStateMixin {
+    with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
   late final AnimationController animationController;
   late final Animation<double> opacityAnimation;
 
@@ -43,9 +45,13 @@ class _FadeInEffectState extends State<FadeInEffect>
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return FadeTransition(
       opacity: opacityAnimation,
       child: widget.child,
     );
   }
+
+  @override
+  bool get wantKeepAlive => widget.keepAlive;
 }
