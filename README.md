@@ -1,16 +1,10 @@
-# flutter_vikings
+# Recipes Animated UI
 
-A new Flutter project.
+🎥 <a target="_blank" href="https://youtu.be/-BcQAWdtq5E?t=342">Talk Video</a>
+</br>
+📑 <a target="_blank" href="https://docs.google.com/presentation/d/1IbV3c8glWU9T5AsYU5Iiwto4vjm1e05_UB1vqRj8Q7g">Slides</a>
+</br>
+🌍 <a target="_blank" href="https://recipes-ui.roaakdm.com/">Live Demo</a>
 
-## Getting Started
+Readme will be updated with more info soon!
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
