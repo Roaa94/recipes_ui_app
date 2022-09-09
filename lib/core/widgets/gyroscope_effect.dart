@@ -29,8 +29,6 @@ class GyroscopeEffect extends StatefulWidget {
   })  : assert(childBuilder != null),
         super(key: key);
 
-  //...
-
   /// Moving child widget
   final Widget? child;
 
@@ -55,8 +53,7 @@ class _GyroscopeEffectState extends State<GyroscopeEffect> {
 
   @override
   Widget build(BuildContext context) {
-    if (kIsWeb ||
-        defaultTargetPlatform == TargetPlatform.macOS ||
+    if (defaultTargetPlatform == TargetPlatform.macOS ||
         defaultTargetPlatform == TargetPlatform.linux) {
       return _buildChild(context, 0, 0, widget.child);
     } else {
