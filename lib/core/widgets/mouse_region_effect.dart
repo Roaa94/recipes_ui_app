@@ -1,17 +1,41 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
+typedef OffsetEffectBuilder = Widget Function(
+  BuildContext context,
+  Offset offset,
+  Widget? child,
+);
+
 class MouseRegionEffect extends StatefulWidget {
   const MouseRegionEffect({
     Key? key,
     required this.width,
     required this.height,
-    required this.builder,
-  }) : super(key: key);
+    required this.child,
+    this.offsetMultiplier = 1,
+    this.childBuilder,
+    this.maxMovableDistance = 10,
+  })  : assert(child != null),
+        super(key: key);
+
+  const MouseRegionEffect.builder({
+    Key? key,
+    required this.width,
+    required this.height,
+    this.child,
+    this.offsetMultiplier = 1,
+    required this.childBuilder,
+    this.maxMovableDistance = 10,
+  })  : assert(childBuilder != null),
+        super(key: key);
 
   final double width;
   final double height;
-  final Widget Function(BuildContext context, Offset offser) builder;
+  final OffsetEffectBuilder? childBuilder;
+  final Widget? child;
+  final double offsetMultiplier;
+  final double maxMovableDistance;
 
   @override
   State<MouseRegionEffect> createState() => _MouseRegionEffectState();
@@ -20,7 +44,6 @@ class MouseRegionEffect extends StatefulWidget {
 class _MouseRegionEffectState extends State<MouseRegionEffect> {
   Offset offset = const Offset(0, 0);
   Alignment mouseRegionAlignment = Alignment.bottomRight;
-  static const maxMovableDistance = 10;
 
   Alignment alignmentFromOffset(Offset mousePosition) {
     if (mousePosition.dx > widget.width / 2) {
@@ -37,8 +60,8 @@ class _MouseRegionEffectState extends State<MouseRegionEffect> {
   Offset offsetFromMousePosition(Offset mousePosition) {
     Alignment alignment = alignmentFromOffset(mousePosition);
     return Offset(
-      maxMovableDistance * alignment.x * -1,
-      maxMovableDistance * alignment.y * -1,
+      widget.maxMovableDistance * alignment.x * -1,
+      widget.maxMovableDistance * alignment.y * -1,
     );
   }
 
@@ -61,7 +84,27 @@ class _MouseRegionEffectState extends State<MouseRegionEffect> {
           offset = offsetFromMousePosition(event.localPosition);
         });
       },
-      child: widget.builder(context, offset),
+      child: _buildChild(context, widget.child),
     );
+  }
+
+  Widget _buildChild(BuildContext context, Widget? child) {
+    if (widget.childBuilder != null) {
+      return widget.childBuilder!.call(context, offset, child);
+    } else {
+      return TweenAnimationBuilder(
+        tween: Tween<Offset>(
+          begin: Offset.zero,
+          end: offset * widget.offsetMultiplier,
+        ),
+        duration: const Duration(milliseconds: 500),
+        curve: Curves.easeOutBack,
+        builder: (context, Offset offset, child) => Transform.translate(
+          offset: offset,
+          child: child,
+        ),
+        child: child,
+      );
+    }
   }
 }

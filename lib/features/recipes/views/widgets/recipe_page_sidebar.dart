@@ -21,10 +21,10 @@ class RecipePageSidebar extends StatelessWidget {
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
 
-    return MouseRegionEffect(
+    return MouseRegionEffect.builder(
       width: screenSize.width / 2,
       height: screenSize.height,
-      builder: (context, offset) => Stack(
+      childBuilder: (context, offset, _) => Stack(
         children: [
           RecipePageImageBg(
             recipe,
