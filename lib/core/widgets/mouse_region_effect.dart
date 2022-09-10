@@ -1,11 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-
-typedef OffsetEffectBuilder = Widget Function(
-  BuildContext context,
-  Offset offset,
-  Widget? child,
-);
+import 'package:recipes_ui/core/widgets/adaptive_offset_effect.dart';
 
 class MouseRegionEffect extends StatefulWidget {
   const MouseRegionEffect({
@@ -68,7 +63,7 @@ class _MouseRegionEffectState extends State<MouseRegionEffect> {
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
-      hitTestBehavior: HitTestBehavior.opaque,
+      hitTestBehavior: HitTestBehavior.translucent,
       onEnter: (PointerEnterEvent event) {
         setState(() {
           offset = offsetFromMousePosition(event.localPosition);

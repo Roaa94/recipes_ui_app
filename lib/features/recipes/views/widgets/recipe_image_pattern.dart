@@ -3,18 +3,19 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:recipes_ui/core/enums/screen_size.dart';
 import 'package:recipes_ui/core/styles/app_colors.dart';
-import 'package:recipes_ui/core/widgets/gyroscope_effect.dart';
 import 'package:recipes_ui/features/recipes/models/recipe.dart';
 
 class RecipeImagePattern extends StatelessWidget {
   const RecipeImagePattern(
     this.recipe, {
     Key? key,
+    this.offset = Offset.zero,
     required this.borderRadius,
   }) : super(key: key);
 
   final Recipe recipe;
   final BorderRadius borderRadius;
+  final Offset offset;
 
   @override
   Widget build(BuildContext context) {
@@ -27,9 +28,14 @@ class RecipeImagePattern extends StatelessWidget {
     return Stack(
       clipBehavior: Clip.none,
       children: [
-        GyroscopeEffect(
-          offsetMultiplier: 1.5,
-          maxMovableDistance: 12,
+        TweenAnimationBuilder<Offset>(
+          tween: Tween<Offset>(begin: Offset.zero, end: offset * 1.5),
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOutBack,
+          builder: (context, Offset offset, child) => Transform.translate(
+            offset: offset,
+            child: child!,
+          ),
           child: Align(
             alignment: alignment,
             child: ClipRRect(
@@ -45,7 +51,14 @@ class RecipeImagePattern extends StatelessWidget {
             ),
           ),
         ),
-        GyroscopeEffect(
+        TweenAnimationBuilder<Offset>(
+          tween: Tween<Offset>(begin: Offset.zero, end: offset),
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOutBack,
+          builder: (context, Offset offset, child) => Transform.translate(
+            offset: offset,
+            child: child!,
+          ),
           child: ClipRRect(
             borderRadius: borderRadius,
             child: Container(
