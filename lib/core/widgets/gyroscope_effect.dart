@@ -11,7 +11,7 @@ class GyroscopeEffect extends StatefulWidget {
     this.maxMovableDistance = 10,
     this.offsetMultiplier = 1,
     this.childBuilder,
-  })  : assert(child != null),
+  })  : assert(child != null && childBuilder == null),
         super(key: key);
 
   const GyroscopeEffect.builder({

@@ -11,7 +11,7 @@ class MouseRegionEffect extends StatefulWidget {
     this.offsetMultiplier = 1,
     this.childBuilder,
     this.maxMovableDistance = 10,
-  })  : assert(child != null),
+  })  : assert(child != null && childBuilder == null),
         super(key: key);
 
   const MouseRegionEffect.builder({
