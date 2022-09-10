@@ -48,26 +48,21 @@ class _GyroscopeEffectState extends State<GyroscopeEffect> {
 
   @override
   Widget build(BuildContext context) {
-    if (defaultTargetPlatform == TargetPlatform.macOS ||
-        defaultTargetPlatform == TargetPlatform.linux) {
-      return _buildChild(context, 0, 0, widget.child);
-    } else {
-      return Consumer(
-        child: widget.child,
-        builder: (context, ref, child) {
-          final GyroscopeEvent? gyroscopeEvent =
-              ref.watch(gyroscopeProvider).value;
-          if (gyroscopeEvent != null) {
-            x += gyroscopeEvent.y;
-            y += gyroscopeEvent.x;
-          }
-          x = x.clamp(-widget.maxMovableDistance, widget.maxMovableDistance);
-          y = y.clamp(-widget.maxMovableDistance, widget.maxMovableDistance);
+    return Consumer(
+      child: widget.child,
+      builder: (context, ref, child) {
+        final GyroscopeEvent? gyroscopeEvent =
+            ref.watch(gyroscopeProvider).value;
+        if (gyroscopeEvent != null) {
+          x += gyroscopeEvent.y;
+          y += gyroscopeEvent.x;
+        }
+        x = x.clamp(-widget.maxMovableDistance, widget.maxMovableDistance);
+        y = y.clamp(-widget.maxMovableDistance, widget.maxMovableDistance);
 
-          return _buildChild(context, x, y, child);
-        },
-      );
-    }
+        return _buildChild(context, x, y, child);
+      },
+    );
   }
 
   Widget _buildChild(BuildContext context, double x, double y, Widget? child) {
