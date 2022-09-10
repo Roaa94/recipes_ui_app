@@ -9,8 +9,8 @@ import 'package:recipes_ui/features/recipes/views/widgets/recipe_image.dart';
 import 'package:recipes_ui/features/recipes/views/widgets/recipe_image_pattern.dart';
 import 'package:recipes_ui/features/recipes/views/widgets/recipe_page_image_bg.dart';
 
-class RecipePageSliderAppBar extends StatelessWidget {
-  const RecipePageSliderAppBar({
+class RecipePageSliverAppBar extends StatelessWidget {
+  const RecipePageSliverAppBar({
     Key? key,
     required this.recipe,
     this.expandedHeight = 340,

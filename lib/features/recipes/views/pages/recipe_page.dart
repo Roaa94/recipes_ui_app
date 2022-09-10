@@ -87,7 +87,7 @@ class _RecipePageState extends State<RecipePage> {
                   ValueListenableBuilder(
                     valueListenable: imageRotationAngleNotifier,
                     builder: (context, double imageRotationAngle, child) {
-                      return RecipePageSliderAppBar(
+                      return RecipePageSliverAppBar(
                         imageRotationAngle: imageRotationAngle,
                         recipe: widget.recipe,
                       );
