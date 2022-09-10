@@ -30,21 +30,18 @@ class _RecipeListItemState extends State<RecipeListItem> {
 
     return RecipeListItemGestureDetector(
       onTap: () {
-        Navigator.of(context)
-            .push(
+        Navigator.of(context).push(
           PageRouteBuilder(
             transitionDuration: const Duration(milliseconds: 300),
-            pageBuilder: (BuildContext context, Animation<double> animation,
-                Animation<double> secondaryAnimation) {
+            pageBuilder:
+                (BuildContext context, Animation<double> animation, _) {
               return RecipePage(
                 widget.recipe,
                 initialImageRotationAngle: recipeImageRotationAngle,
               );
             },
             transitionsBuilder: (BuildContext context,
-                Animation<double> animation,
-                Animation<double> secondaryAnimation,
-                Widget child) {
+                Animation<double> animation, _, Widget child) {
               return FadeTransition(
                 opacity: animation,
                 child: child,

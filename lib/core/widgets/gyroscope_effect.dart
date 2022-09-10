@@ -1,14 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:recipes_ui/core/widgets/adaptive_offset_effect.dart';
 import 'package:recipes_ui/features/recipes/providers/gyroscope_provider.dart';
 import 'package:sensors_plus/sensors_plus.dart';
-
-typedef GyroscopeEffectBuilder = Widget Function(
-  BuildContext context,
-  Offset offset,
-  Widget? child,
-);
 
 class GyroscopeEffect extends StatefulWidget {
   const GyroscopeEffect({
@@ -41,7 +36,7 @@ class GyroscopeEffect extends StatefulWidget {
 
   /// A builder that provides necessary data to build a moving child
   /// with its child not rebuilding with the stream
-  final GyroscopeEffectBuilder? childBuilder;
+  final OffsetEffectBuilder? childBuilder;
 
   @override
   State<GyroscopeEffect> createState() => _GyroscopeEffectState();
@@ -83,14 +78,18 @@ class _GyroscopeEffectState extends State<GyroscopeEffect> {
         child,
       );
     } else {
-      return AnimatedPositioned(
-        top: y * widget.offsetMultiplier,
-        bottom: y * widget.offsetMultiplier,
-        left: -x * widget.offsetMultiplier,
-        right: x * widget.offsetMultiplier,
-        duration: const Duration(milliseconds: 100),
-        curve: Curves.easeOut,
-        child: child!,
+      return TweenAnimationBuilder(
+        tween: Tween<Offset>(
+          begin: Offset.zero,
+          end: Offset(-x, -y) * widget.offsetMultiplier,
+        ),
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeOutBack,
+        builder: (context, Offset offset, child) => Transform.translate(
+          offset: offset,
+          child: child!,
+        ),
+        child: child,
       );
     }
   }

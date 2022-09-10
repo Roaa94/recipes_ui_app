@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:recipes_ui/core/widgets/app_bar_leading.dart';
 import 'package:recipes_ui/core/widgets/fade_in_effect.dart';
-import 'package:recipes_ui/core/widgets/mouse_region_effect.dart';
+import 'package:recipes_ui/core/widgets/adaptive_offset_effect.dart';
 import 'package:recipes_ui/features/recipes/models/recipe.dart';
 import 'package:recipes_ui/features/recipes/views/widgets/recipe_image.dart';
 import 'package:recipes_ui/features/recipes/views/widgets/recipe_image_pattern_mouse.dart';
@@ -21,10 +21,10 @@ class RecipePageSidebar extends StatelessWidget {
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
 
-    return MouseRegionEffect(
+    return AdaptiveOffsetEffect.builder(
       width: screenSize.width / 2,
       height: screenSize.height,
-      builder: (context, offset) => Stack(
+      childBuilder: (context, offset, _) => Stack(
         children: [
           RecipePageImageBg(
             recipe,
