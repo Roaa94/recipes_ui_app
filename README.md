@@ -8,4 +8,5 @@
 </br>
 🌍 <a target="_blank" href="https://recipes-ui.roaakdm.com/">Live Demo</a>
 
+📃 [Check out this article for full details and a written version of the talk](https://medium.com/@roaakdm/c7130939a4c1)
 
