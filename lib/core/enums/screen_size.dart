@@ -45,19 +45,19 @@ enum ScreenSize {
     }
   }
 
-  static int gridCrossAxisCount(BuildContext context) {
-    switch (ScreenSize.of(context)) {
-      case ScreenSize.xs:
-      case ScreenSize.sm:
-        return 1;
-      case ScreenSize.md:
-        return 2;
-      case ScreenSize.lg:
-        return 3;
-      case ScreenSize.xl:
-        return 4;
-      case ScreenSize.xxl:
-        return 5;
-    }
-  }
+  // static int gridCrossAxisCount(BuildContext context) {
+  //   switch (ScreenSize.of(context)) {
+  //     case ScreenSize.xs:
+  //     case ScreenSize.sm:
+  //       return 1;
+  //     case ScreenSize.md:
+  //       return 2;
+  //     case ScreenSize.lg:
+  //       return 3;
+  //     case ScreenSize.xl:
+  //       return 4;
+  //     case ScreenSize.xxl:
+  //       return 5;
+  //   }
+  // }
 }
